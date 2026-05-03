@@ -1,0 +1,26 @@
+.comunidad-container {
+    padding: 20px; // Menos padding en los costados
+    max-width: 800px;
+    margin: 0 auto;
+  
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 20px;
+    }
+  
+    details {
+      // ... tu código anterior de background, border, etc ...
+      
+      summary {
+        font-size: 1.1rem;
+        // Añadimos un pequeño indicador visual de que se puede clickear
+        &::after {
+          content: ' ▼';
+          font-size: 0.8rem;
+          float: right;
+        }
+      }
+    }
+  }

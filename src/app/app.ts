@@ -1,7 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
-import { Nav } from './components/nav/nav';
+import { Nav } from './components/nav/nav'
+import { Comunidad } from './components/comunidad/comunidad';
 import { Hero } from './components/hero/hero';
 import { Noticias } from './components/noticias/noticias';
 import { Donaciones } from './components/donaciones/donaciones';
@@ -9,7 +8,7 @@ import { Donaciones } from './components/donaciones/donaciones';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Nav, Hero, Noticias, Donaciones],
+  imports: [Nav, Comunidad, Hero, Noticias, Donaciones],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
