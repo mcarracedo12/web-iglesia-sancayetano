@@ -71,3 +71,59 @@
       }
     }
   }
+
+  // .social-sidebar {
+  //   position: fixed;
+  //   left: 20px;
+  //   bottom: 20px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   gap: 10px;
+  //   z-index: 2000;
+  
+  //   .social-icon {
+  //     width: 45px;
+  //     height: 45px;
+  //     border-radius: 50%;
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+  //     color: white;
+  //     text-decoration: none;
+  //     font-weight: bold;
+  //     font-size: 0.8rem;
+  //     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  //   }
+  //   .ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+  //   .fb { background-color: #1877F2; }
+  // }
+
+  // Ajuste general para los botones de Redes (Izquierda)
+.social-sidebar {
+  left: 15px;
+  bottom: 80px; // Lo subimos un poco para que no choque con el botón de donar en algunos celus
+
+  .social-icon {
+    width: 55px;  // Un poquito más grande para el dedo
+    height: 55px;
+    font-size: 1rem;
+  }
+}
+
+// Ajuste para el botón de Donar (Derecha)
+.float-button {
+  bottom: 20px;
+  right: 15px;
+  height: 60px; // Altura fija para que sea un círculo perfecto en móvil
+  min-width: 60px;
+  padding: 0 20px;
+
+  @media (max-width: 600px) {
+    padding: 0;
+    width: 65px; // En celu lo hacemos un círculo bien claro
+    height: 65px;
+    
+    .text { display: none; }
+    .icon { font-size: 1.8rem; } // El corazón más grande
+  }
+}
