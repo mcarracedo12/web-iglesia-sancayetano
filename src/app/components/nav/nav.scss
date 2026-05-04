@@ -1,129 +1,54 @@
+/* --- ESTILO DEL NAV (Arriba) --- */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #ddd;
-    position: sticky; // Para que el menú te siga al bajar
-    top: 0;
-    z-index: 1000;
-  
-    .logo {
-      font-weight: bold;
-      font-size: 1.5rem;
-      color: #2c3e50;
-    }
-  
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-      margin: 0;
-  
-      a {
-        text-decoration: none;
-        color: #555;
-        font-weight: 500;
-        transition: 0.3s;
-        &:hover { color: #2c3e50; }
-      }
-    }
-  
-    // Escondemos el checkbox y la hamburguesa por defecto (PC)
-    .menu-toggle, .hamburger {
-      display: none;
-    }
-  
-    // --- RESPONSIVE ---
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-  
-        span {
-          width: 25px;
-          height: 3px;
-          background-color: #2c3e50;
-          border-radius: 2px;
-        }
-      }
-  
-      .nav-links {
-        display: none; // Escondido en el celu por defecto
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #f8f9fa;
-        padding: 20px;
-        border-bottom: 1px solid #ddd;
-        gap: 15px;
-        text-align: center;
-      }
-  
-      // EL TRUCO: Si el checkbox está marcado, mostramos el menú
-      .menu-toggle:checked ~ .nav-links {
-        display: flex;
-      }
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+
+  .logo {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #2c3e50;
   }
 
-  // .social-sidebar {
-  //   position: fixed;
-  //   left: 20px;
-  //   bottom: 20px;
-  //   display: flex;
-  //   flex-direction: column;
-  //   gap: 10px;
-  //   z-index: 2000;
-  
-  //   .social-icon {
-  //     width: 45px;
-  //     height: 45px;
-  //     border-radius: 50%;
-  //     display: flex;
-  //     align-items: center;
-  //     justify-content: center;
-  //     color: white;
-  //     text-decoration: none;
-  //     font-weight: bold;
-  //     font-size: 0.8rem;
-  //     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  //   }
-  //   .ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-  //   .fb { background-color: #1877F2; }
-  // }
+  .nav-social {
+    display: flex;
+    gap: 20px;
 
-  // Ajuste general para los botones de Redes (Izquierda)
-.social-sidebar {
-  left: 15px;
-  bottom: 80px; // Lo subimos un poco para que no choque con el botón de donar en algunos celus
+    .nav-link-icon {
+      color: #2c3e50;
+      font-size: 1.5rem; // Tamaño en PC
+      text-decoration: none;
+      transition: transform 0.3s ease;
 
-  .social-icon {
-    width: 55px;  // Un poquito más grande para el dedo
-    height: 55px;
-    font-size: 1rem;
+      &:hover {
+        transform: scale(1.1);
+        color: #000;
+      }
+    }
   }
 }
 
-// Ajuste para el botón de Donar (Derecha)
-.float-button {
-  bottom: 20px;
-  right: 15px;
-  height: 60px; // Altura fija para que sea un círculo perfecto en móvil
-  min-width: 60px;
-  padding: 0 20px;
+/* --- RESPONSIVE (Ajuste para Celular) --- */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.8rem 1rem;
 
-  @media (max-width: 600px) {
-    padding: 0;
-    width: 65px; // En celu lo hacemos un círculo bien claro
-    height: 65px;
-    
-    .text { display: none; }
-    .icon { font-size: 1.8rem; } // El corazón más grande
+    .logo {
+      font-size: 1.1rem;
+    }
+
+    .nav-social {
+      gap: 15px;
+
+      .nav-link-icon {
+        font-size: 1.2rem; // Se achican los logos de Instagram y FB
+      }
+    }
   }
 }

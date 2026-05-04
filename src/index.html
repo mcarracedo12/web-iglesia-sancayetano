@@ -1,14 +1,59 @@
 <!doctype html>
+
 <html lang="en">
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
-  <title>WebIglesia</title>
+  <title>Parroquia San Cayetano</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
   <app-root></app-root>
+
+  <script>
+    // Esta función espera a que TODO el contenido de la página cargue
+    window.addEventListener('load', () => {
+
+      // Usamos un pequeño intervalo para darle tiempo a Angular de renderizar los componentes
+      setTimeout(() => {
+        const container = document.getElementById('carouselContainer');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+
+        if (container && nextBtn && prevBtn) {
+          nextBtn.addEventListener('click', () => {
+            const scrollAmount = 350;
+            if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 50) {
+              container.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+              container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+          });
+
+          prevBtn.addEventListener('click', () => {
+            const scrollAmount = 350;
+            if (container.scrollLeft <= 5) {
+              container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
+            } else {
+              container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            }
+          });
+
+          console.log("Carrusel de Comunidad listo!");
+        } else {
+          console.warn("No se encontraron los elementos del carrusel todavía.");
+        }
+      }, 500); // Esperamos medio segundo
+    });
+  </script>
+
+
 </body>
+
 </html>

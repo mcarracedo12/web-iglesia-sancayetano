@@ -1,79 +1,106 @@
 .comunidad-grid {
   padding: 50px 20px;
   text-align: center;
-  background-color: #fff;
-
-  h2 {
-    color: #2c3e50;
-    margin-bottom: 30px;
-    font-size: 2rem;
-  }
 
   .cards-container {
-    display: grid;
-    // Igualamos el minmax a 250px como en Noticias para que las columnas midan lo mismo
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    max-width: 1000px; // Igualamos el ancho máximo de Noticias
-    margin: 0 auto;
+    display: flex; // Cambiamos grid por flex para la fila única
+    gap: 25px;
+    overflow-x: auto; // Habilita el scroll horizontal
+    padding: 20px 10px;
+    scroll-snap-type: x mandatory; // Hace que las tarjetas "encajen" al deslizar
+    scroll-behavior: smooth;
+    
+    // Escondemos la barra de scroll para que se vea más limpio
+    &::-webkit-scrollbar { display: none; } 
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
   }
 
   .card {
+    flex: 0 0 300px; // No se achican, siempre miden 300px
+    scroll-snap-align: center; // La tarjeta se centra al scrollear
     background: #fff;
-    // Quitamos bordes y sombras exteriores para que la protagonista sea la foto redondeada
-    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #eee;
     transition: transform 0.3s ease;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
 
-    &:hover {
-      transform: scale(1.03);
-    }
+    &:hover { transform: scale(1.02); }
 
     img {
       width: 100%;
-      // CLAVE: Usamos 1/1 para que sea un cuadrado perfecto igual que en Noticias
-      aspect-ratio: 1 / 1; 
-      
-      border-radius: 10px; // El mismo redondeo que Noticias
+      aspect-ratio: 1 / 1;
       object-fit: cover;
-      object-position: top; // Mantiene la cabeza del santo a la vista
-      
-      transition: transform 0.5s ease;
+      object-position: top;
     }
 
     .card-info {
-      padding: 15px 5px; // Menos padding lateral para que el texto se alinee con la foto
-      text-align: left; 
+      padding: 20px;
+      text-align: left;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
-      h3 {
-        color: #2c3e50;
-        margin: 10px 0 5px 0;
-        font-size: 1.2rem;
-      }
+      h3 { margin: 0 0 10px; color: #2c3e50; }
+      p { color: #666; font-size: 0.9rem; margin-bottom: 15px; }
+      
+      .btn-whatsapp {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #25d366; // Verde WhatsApp
+        color: white;
+        text-decoration: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 0.85rem;
+        width: fit-content;
+        transition: background 0.3s;
 
-      p {
-        color: #666;
-        margin: 0;
-        font-size: 0.95rem;
-        line-height: 1.4;
+        &:hover { background-color: #128c7e; }
       }
     }
   }
 
-  // --- RESPONSIVE ---
   @media (max-width: 600px) {
-    padding: 30px 15px;
-
-    .cards-container {
-      // En celu mantenemos el grid pero quizás con menos espacio
-      grid-template-columns: 1fr; 
-      gap: 25px;
-    }
-
-    .card img {
-      // En celu mantenemos el cuadrado para que se vea grande
-      aspect-ratio: 1 / 1;
-      height: auto; // Quitamos el height fijo de 220px que te estaba molestando
+    .card {
+      flex: 0 0 85%; // En celu se ve una tarjeta casi entera y un pedacito de la otra
     }
   }
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  .arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #eee;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+
+    &:hover { background: #fff; transform: translateY(-50%) scale(1.1); }
+    &.left { left: -10px; }
+    &.right { right: -10px; }
+  }
+}
+
+// En el celu ocultamos las flechas porque se usa el dedo
+@media (max-width: 600px) {
+  .arrow-btn { display: none; }
 }

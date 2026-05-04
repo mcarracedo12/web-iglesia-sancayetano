@@ -1,13 +1,20 @@
 <section id="comunidad" class="comunidad-grid">
   <h2>Nuestra Comunidad</h2>
 
-  <div class="cards-container">
+  <div class="carousel-wrapper">
+    <!-- Flecha Izquierda -->
+    <button class="arrow-btn left" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+
+  <div class="cards-container" id="carouselContainer">
     <!-- Tarjeta Catequesis -->
     <div class="card">
       <img src="assets/sancayetano2.jpg" alt="Catequesis">
       <div class="card-info">
         <h3>Catequesis</h3>
         <p>Acompañamos a niños y adultos en su camino de fe.</p>
+        <a href="https://wa.me/TUNUMERO" target="_blank" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Participar
+        </a>
       </div>
     </div>
 
@@ -17,14 +24,24 @@
       <div class="card-info">
         <h3>Cáritas</h3>
         <p>Recibimos donaciones los martes y jueves de 16 a 18 hs.</p>
+        <a href="https://wa.me/TUNUMERO" target="_blank" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Participar
+        </a>
       </div>
     </div>
+
+    <!-- Tarjeta Extra -->
     <div class="card">
       <img src="assets/sancayetano1.jpg" alt="Catequesis">
       <div class="card-info">
         <h3>Catequesis</h3>
         <p>Acompañamos a niños y adultos en su camino de fe.</p>
+        <a href="https://wa.me/TUNUMERO" target="_blank" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Participar
+        </a>
       </div>
     </div>
+    </div>
+    <button class="arrow-btn right" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
   </div>
 </section>
