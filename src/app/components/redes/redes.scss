@@ -1,0 +1,101 @@
+ 
+  @media (max-width: 480px) {
+    .social-card {
+      width: 100%; // En celu ocupan todo el ancho
+      justify-content: center;
+    }
+  }
+
+//    Nuevo
+  .social-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+  }
+  
+  .ig-mockup {
+    width: 340px;
+    height: 500px; // Misma altura que el de Facebook para que queden parejos
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+  
+    .ig-header {
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #eee;
+      font-weight: bold;
+      i { font-size: 1.5rem; color: #e1306c; }
+    }
+  
+    .ig-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+  
+      .ig-btn {
+        margin-top: 20px;
+        background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .ig-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; // Dos columnas
+    gap: 10px;
+    padding: 15px;
+    
+    img {
+      width: 100%;
+      aspect-ratio: 1 / 1; // Las hace cuadraditas perfectas
+      object-fit: cover;
+      border-radius: 4px;
+      transition: opacity 0.3s;
+      
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+
+
+  .ig-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // Dos columnas iguales
+    gap: 8px; // Espacio entre fotos
+    padding: 15px;
+    flex-grow: 1; // Para que ocupe el espacio disponible
+    align-content: start;
+  
+    img {
+      width: 100%;
+      aspect-ratio: 1 / 1; // Las obliga a ser cuadradas
+      object-fit: cover; // Recorta el exceso de la foto sin deformar
+      border-radius: 4px;
+      display: block;
+    }
+  }
+  
+  .ig-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%; // Para que el botón quede siempre abajo
+    justify-content: space-between;
+  }

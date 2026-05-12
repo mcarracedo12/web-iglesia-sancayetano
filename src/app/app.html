@@ -2,29 +2,35 @@
   <app-nav></app-nav>
   <app-hero></app-hero>
   <app-comunidad></app-comunidad>
+
+
   <app-donaciones></app-donaciones>
+  <app-redes></app-redes>
+
+  
+  <section class="info-cultura">
+    <div class="info-card">
+      <img src="assets/historia-iglesia.jpg" alt="Historia">
+      <h3>Nuestra Historia</h3>
+      <!-- <button (click)="mostrarHistoria = true">Conocer más</button> -->
+    </div>
+  
+    <div class="info-card">
+      <img src="assets/san-cayetano-img.jpg" alt="San Cayetano">
+      <h3>¿Quién fue San Cayetano?</h3>
+      <!-- <button (click)="mostrarBio = true">Ver Biografía</button> -->
+    </div>
+  </section>
+  
+  <!-- El componente de texto que está oculto -->
+  <!-- <app-historia-modal *ngIf="mostrarHistoria" (close)="mostrarHistoria = false"></app-historia-modal> -->
+  <!-- <app-biografia-modal *ngIf="mostrarBiografia" (close)="mostrarBiografia = false"></app-biografia-modal> -->
+
+
+
 </main>
 
-<section class="social-preview">
-  <div class="container">
-    <h2>Seguinos en nuestras redes</h2>
-    <p>Enterate de todas las novedades y celebraciones al instante.</p>
-    
-    <div class="social-cards">
-      <!-- Card Instagram -->
-      <a href="https://www.instagram.com/sancayetanorosario/" target="_blank" class="social-card instagram">
-        <i class="fa-brands fa-instagram"></i>
-        <span>Instagram</span>
-      </a>
 
-      <!-- Card Facebook -->
-      <a href="https://www.facebook.com/ParroquiaSanCayetanoRosario" target="_blank" class="social-card facebook">
-        <i class="fa-brands fa-facebook-f"></i>
-        <span>Facebook</span>
-      </a>
-    </div>
-  </div>
-</section>
 
 
 <footer class="main-footer">
