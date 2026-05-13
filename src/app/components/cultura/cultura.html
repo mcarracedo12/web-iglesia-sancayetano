@@ -1,0 +1,17 @@
+<section class="info-cultura">
+    <div class="info-card">
+      <img src="assets/sancayetano1.jpg" alt="Historia">
+      <h3>Nuestra Historia</h3>
+      <button (click)="mostrarHistoria = true">Conocer más</button>
+    </div>
+  
+    <div class="info-card">
+      <img src="assets/sinfondo.jpg" alt="San Cayetano">
+      <h3>¿Quién fue San Cayetano?</h3>
+      <button (click)="mostrarBiografia = true">Ver Biografía</button>
+    </div>
+  </section>
+  
+  <!-- El componente de texto que está oculto -->
+  <app-historia-modal *ngIf="mostrarHistoria" (close)="mostrarHistoria = false"></app-historia-modal>
+  <app-biografia-modal *ngIf="mostrarBiografia" (close)="mostrarBiografia = false"></app-biografia-modal>
