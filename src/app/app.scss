@@ -33,7 +33,7 @@ body {
     gap: 8px;
 
     h3 {
-      margin: 0 0 5px 0; // Casi nada de espacio debajo del nombre de la parroquia
+      margin: 0 0 5px 0; 
       font-size: 1.1rem;
       color: #fff;
       font-weight: 700;
@@ -55,7 +55,6 @@ body {
       }
 
       i {
-        // width: 20px;
         color: #fff;
       }
     }
@@ -140,15 +139,13 @@ body {
   }
 }
 
-// En celu lo hacemos un poquito más compacto
 @media (max-width: 480px) {
   .audio-toggle {
     bottom: 15px;
     right: 15px;
     padding: 10px;
-    
     span {
-      display: none; // Escondemos el texto en celu para que no ocupe pantalla
+      display: none; 
     }
   }
 }

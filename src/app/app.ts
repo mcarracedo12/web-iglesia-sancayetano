@@ -19,7 +19,6 @@ export class App implements OnInit, OnDestroy{
   audio!: HTMLAudioElement;
   sonando: boolean = false;
   ngOnInit(): void {
-      // Inicializamos el audio con la ruta del archivo
     this.audio = new Audio('assets/All_Of_Me.mp3');
     this.audio.loop = true; 
     this.audio.volume = 0.4; 
