@@ -11,7 +11,12 @@
 
   <app-cultura></app-cultura>
 
-
+  <button class="audio-toggle" (click)="toggleMusica()" [class.playing]="sonando">
+    <i class="fa-solid" [ngClass]="sonando ? 'fa-volume-high' : 'fa-volume-xmark'"></i>
+    <span>{{ sonando ? 'Silenciar' : 'Música de fondo' }}</span>
+  </button>
+  
+  <!-- All_Of_Me_-_John_Legend__Lindsey_Stirling_xwsYvBYZcx4 -->
 </main>
 
 

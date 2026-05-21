@@ -85,3 +85,70 @@ body {
     text-align: center;
   }
 }
+
+
+// Musica
+.audio-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 3000; 
+  background-color: #5d4037; 
+  color: #f4ecd8; 
+  border: 1px solid #d4a373;
+  padding: 10px 18px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+
+  i {
+    font-size: 1.1rem;
+  }
+
+  span {
+    font-size: 0.85rem;
+  }
+
+  &:hover {
+    background-color: #d4a373; 
+    color: white;
+    transform: scale(1.05);
+  }
+
+  &.playing {
+    box-shadow: 0 0 0 0 rgba(212, 163, 115, 0.7);
+    animation: pulsoAudio 2s infinite;
+  }
+}
+
+@keyframes pulsoAudio {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 10px rgba(212, 163, 115, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(212, 163, 115, 0);
+  }
+}
+
+// En celu lo hacemos un poquito más compacto
+@media (max-width: 480px) {
+  .audio-toggle {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px;
+    
+    span {
+      display: none; // Escondemos el texto en celu para que no ocupe pantalla
+    }
+  }
+}
