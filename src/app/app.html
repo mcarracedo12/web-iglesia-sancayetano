@@ -8,9 +8,10 @@
   <app-redes></app-redes>
   <app-donaciones></app-donaciones>
   <button class="audio-toggle" (click)="toggleMusica()" [class.playing]="sonando">
-    <i class="fa-solid" [ngClass]="sonando ? 'fa-volume-high' : 'fa-volume-xmark'"></i>
-    <span>{{ sonando ? 'Silenciar' : 'Música de fondo' }}</span>
-  </button>
+    <i class="fa-solid" [ngClass]="sonando ? 'fa-volume-xmark' : 'fa-music'"></i>
+  </button>  
+
+  <app-oraciones></app-oraciones>
 
 </main>
 

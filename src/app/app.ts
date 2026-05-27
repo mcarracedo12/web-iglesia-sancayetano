@@ -6,11 +6,12 @@ import { Hero } from './components/hero/hero';
 import { Donaciones } from './components/donaciones/donaciones';
 import { Redes } from './components/redes/redes';
 import { Cultura } from './components/cultura/cultura'
+import { Oraciones } from './components/oraciones/oraciones';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, Nav, Comunidad, Hero, Donaciones, Redes, Cultura],
+  imports: [CommonModule, Nav, Comunidad, Hero, Donaciones, Redes, Cultura, Oraciones],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -19,7 +20,7 @@ export class App implements OnInit, OnDestroy{
   audio!: HTMLAudioElement;
   sonando: boolean = false;
   ngOnInit(): void {
-    this.audio = new Audio('assets/All_Of_Me.mp3');
+    this.audio = new Audio('assets/himno-san-cayetano.mp3');
     this.audio.loop = true; 
     this.audio.volume = 0.4; 
   }
