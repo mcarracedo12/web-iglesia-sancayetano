@@ -11,7 +11,7 @@
       <img src="assets/misa1.jpg" alt="Catequesis">
       <div class="card-info">
         <h3>Secretaria</h3>
-        <p>Informacion de requisitos bautismos, matrimonios y catequesis de niños y confesiones.</p>
+        <h5 (click)="mostrarReqBautismos = true">Informacion de requisitos bautismos</h5><p> matrimonios y catequesis de niños y confesiones.</p>
         <a href="https://wa.me/3416351512" target="_blank" class="btn-whatsapp">
           <i class="fa-brands fa-whatsapp"></i> Contactanos
         </a>
@@ -100,3 +100,6 @@
     <button class="arrow-btn right" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
   </div>
 </section>
+
+
+<app-req-bautismos *ngIf="mostrarReqBautismos" (close)="mostrarReqBautismos = false"></app-req-bautismos>

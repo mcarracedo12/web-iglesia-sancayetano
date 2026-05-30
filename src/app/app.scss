@@ -91,7 +91,7 @@ body {
   position: fixed;
   width: 45px;
   height: 45px;
-  bottom: 40px;
+  bottom: 30px;
   right: 40px;
   z-index: 3000; 
   background-color: #5d4037; 
@@ -133,8 +133,8 @@ body {
 
 @media (max-width: 480px) {
   .audio-toggle {
-    bottom: 35px;
-    right: 35px;
-    padding: 10px;
+    bottom: 15px;
+    right: 15px;
+    padding: 12px;
   }
 }

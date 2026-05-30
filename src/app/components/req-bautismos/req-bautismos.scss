@@ -1,0 +1,123 @@
+.info-cultura {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 20px;
+    background-color: #fdfcf8; // Fondo crema sutil
+  
+    .info-card {
+      width: 300px;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-10px);
+      }
+  
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+  
+      h3 {
+        padding: 20px 10px 10px;
+        color: #5d4037; // Marrón cálido
+        font-family: 'Playfair Display', serif; // Si podés, cargá esta fuente de Google
+      }
+  
+      button {
+        margin-bottom: 25px;
+        padding: 10px 20px;
+        border: 2px solid #d4a373; // Color ocre/dorado
+        background: transparent;
+        color: #d4a373;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s;
+  
+        &:hover {
+          background: #d4a373;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+  }
+  
+  .book-page {
+    background-color: #f4ecd8; // Color pergamino/ocre claro
+    background-image: radial-gradient(#e6d5b8 1px, transparent 1px); // Sutil textura de papel
+    background-size: 20px 20px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 85vh;
+    padding: 40px;
+    border-radius: 2px; // Bordes rectos como hoja
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.5);
+    position: relative;
+    overflow-y: auto;
+    border-left: 15px solid #5d4037; 
+  
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2rem;
+      color: #5d4037;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+  
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #5d4037;
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      border-bottom: 1px solid rgba(93, 64, 55, 0.2);
+      padding-bottom: 10px;
+    }
+  
+    .content {
+      font-family: 'Georgia', serif; // Fuente de lectura clásica
+      line-height: 1.8;
+      color: #3e2723;
+      text-align: justify;
+  
+      p {
+        margin-bottom: 20px;
+        text-indent: 30px; // Sangría de libro real
+      }
+  
+      // Letra capital (La primera letra más grande)
+      &::first-letter {
+        float: left;
+        font-size: 4rem;
+        line-height: 1;
+        padding-top: 4px;
+        padding-right: 8px;
+        color: #d4a373;
+        font-weight: bold;
+      }
+    }
+  }
