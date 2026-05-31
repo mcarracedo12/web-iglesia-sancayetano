@@ -16,23 +16,27 @@
           <li (click)="mostrarReqBautismos = true">
             <i class="fa-solid fa-chevron-right"></i> Requisitos para Bautismos
           </li>
-          <li (click)="mostrarReqBautismos = true">
-            <i class="fa-solid fa-chevron-right"></i> Información de Matrimonios
+          <li (click)="mostrarReqCatequesis = true">
+            <i class="fa-solid fa-chevron-right"></i> Requisitos para Catequesis de niños
           </li>
-          <li (click)="mostrarReqBautismos = true">
-            <i class="fa-solid fa-chevron-right"></i> Catequesis de niños
+          <li (click)="mostrarReqCasamientos = true">
+            <i class="fa-solid fa-chevron-right"></i> Requisitos para Casamientos
           </li>
-          <li (click)="mostrarReqBautismos = true">
-            <i class="fa-solid fa-chevron-right"></i> Misas y Confesiones
+          <li (click)="mostrarInfoMisas = true">
+            <i class="fa-solid fa-chevron-right"></i> Información de Misas y Confesiones
           </li>
         </ul>
     
-        <a href="https://wa.me/3416351512" target="_blank" class="btn-whatsapp">
+        <a href="https://wa.me/3413535467" target="_blank" class="btn-whatsapp">
           <i class="fa-brands fa-whatsapp"></i> Contactanos
         </a>
       </div>
     </div>
 
+    <app-req-bautismos *ngIf="mostrarReqBautismos" (close)="mostrarReqBautismos = false"></app-req-bautismos>
+<app-req-catequesis *ngIf="mostrarReqCatequesis" (close)="mostrarReqCatequesis = false"></app-req-catequesis>
+<app-req-casamientos *ngIf="mostrarReqCasamientos" (close)="mostrarReqCasamientos = false"></app-req-casamientos>
+<app-info-misas *ngIf="mostrarInfoMisas" (close)="mostrarInfoMisas = false"></app-info-misas>
    
   
 
@@ -120,4 +124,4 @@
 </section>
 
 
-<app-req-bautismos *ngIf="mostrarReqBautismos" (close)="mostrarReqBautismos = false"></app-req-bautismos>
+
