@@ -1,11 +1,36 @@
 <div class="modal-overlay" (click)="cerrar()">
-    <div class="book-page" (click)="$event.stopPropagation()">
-      <button class="close-btn" (click)="cerrar()">&times;</button>
-      <h2>Biografía de San Cayetano</h2>
-      <div class="content">
-        <p>
-            Gaspar Thiene y María Porto en 1475 forman un matrimonio del cual nacen tres hijos: Juan Bautista, Alejandro y Cayetano (nace en Octubre de 1480).</p>
- 
+  <div class="document-page" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="cerrar()">&times;</button>
+    
+    <div class="content">
+      <h2>Requisitos para el Bautismo de Niños</h2>
+      <p class="subtitle"><i class="fa-regular fa-clock"></i> Sábados a las 12 hs</p>
+      
+      <div class="info-grid">
+        <div class="modal-media">
+          <img src="assets/misa1.jpg" alt="bautismo">
+        </div>
+        
+        <div class="modal-body">
+          <ul>
+            <li>Se bautizan a niños menores de 7 años.</li>
+            <li>Se presenta el DNI del niño, DNI de los padres y DNI de los Padrinos.</li>
+            <li>Los padrinos deben presentar partidas de Bautismos.</li>
+            <li>Se puede ser padrino a partir de los 16 años.</li>
+            <li>Si es menor, puede ser padrino con autorización del párroco, habiendo accedido a los Sacramentos del Bautismo, Confirmación y Comunión.</li>
+          </ul>
+          
+          <h4>Niños de 8 años en adelante</h4>
+          <ul>
+            <li>Recibirán el Bautismo en el transcurso de la Catequesis para los Sacramentos de la Iniciación Cristiana.</li>
+          </ul>
+          
+          <h4>Jóvenes y Adultos</h4>
+          <ul>
+            <li>Recibirán los Sacramentos de la Iniciación Cristiana en un camino catecumenal de transmisión de la Fe.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
+</div>

@@ -6,17 +6,35 @@
     <button class="arrow-btn left" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
 
   <div class="cards-container" id="carouselContainer">
-    <!-- Tarjeta Catequesis -->
+    <!-- Tarjeta Secretaria -->
     <div class="card">
-      <img src="assets/misa1.jpg" alt="Catequesis">
+      <img src="assets/misa1.jpg" alt="Secretaria">
       <div class="card-info">
         <h3>Secretaria</h3>
-        <h5 (click)="mostrarReqBautismos = true">Informacion de requisitos bautismos</h5><p> matrimonios y catequesis de niños y confesiones.</p>
+        
+        <ul class="card-menu">
+          <li (click)="mostrarReqBautismos = true">
+            <i class="fa-solid fa-chevron-right"></i> Requisitos para Bautismos
+          </li>
+          <li (click)="mostrarReqBautismos = true">
+            <i class="fa-solid fa-chevron-right"></i> Información de Matrimonios
+          </li>
+          <li (click)="mostrarReqBautismos = true">
+            <i class="fa-solid fa-chevron-right"></i> Catequesis de niños
+          </li>
+          <li (click)="mostrarReqBautismos = true">
+            <i class="fa-solid fa-chevron-right"></i> Misas y Confesiones
+          </li>
+        </ul>
+    
         <a href="https://wa.me/3416351512" target="_blank" class="btn-whatsapp">
           <i class="fa-brands fa-whatsapp"></i> Contactanos
         </a>
       </div>
     </div>
+
+   
+  
 
     <!-- Tarjeta Catequesis -->
     <div class="card">
