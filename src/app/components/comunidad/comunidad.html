@@ -5,97 +5,100 @@
     <!-- Flecha Izquierda -->
     <button class="arrow-btn left" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
 
-  <div class="cards-container" id="carouselContainer">
-    <!-- Tarjeta Secretaria -->
-    <div class="card">
-      <img src="assets/misa1.jpg" alt="Secretaria">
-      <div class="card-info">
-        <h3>Secretaria</h3>
-        
-        <ul class="card-menu">
-          <li (click)="mostrarReqBautismos = true">
-            <i class="fa-solid fa-chevron-right"></i> Requisitos para Bautismos
-          </li>
-          <li (click)="mostrarReqCatequesis = true">
-            <i class="fa-solid fa-chevron-right"></i> Requisitos para Catequesis de niños
-          </li>
-          <li (click)="mostrarReqCasamientos = true">
-            <i class="fa-solid fa-chevron-right"></i> Requisitos para Casamientos
-          </li>
-          <li (click)="mostrarInfoMisas = true">
-            <i class="fa-solid fa-chevron-right"></i> Información de Misas y Confesiones
-          </li>
-        </ul>
-    
-        <a href="https://wa.me/3413535467" target="_blank" class="btn-whatsapp">
-          <i class="fa-brands fa-whatsapp"></i> Contactanos
-        </a>
+    <div class="cards-container" id="carouselContainer">
+      <!-- Tarjeta Secretaria -->
+      <div class="card">
+        <img src="assets/misa1.jpg" alt="Secretaria">
+        <div class="card-info">
+          <h3>Secretaria</h3>
+
+          <ul class="card-menu">
+            <li (click)="mostrarReqBautismos = true">
+              <i class="fa-solid fa-chevron-right"></i> Requisitos para Bautismos
+            </li>
+            <li (click)="mostrarReqCatequesis = true">
+              <i class="fa-solid fa-chevron-right"></i> Requisitos para Catequesis de niños
+            </li>
+            <li (click)="mostrarReqCasamientos = true">
+              <i class="fa-solid fa-chevron-right"></i> Requisitos para Casamientos
+            </li>
+            <li (click)="mostrarInfoMisas = true">
+              <i class="fa-solid fa-chevron-right"></i> Información de Misas y Confesiones
+            </li>
+            <li (click)="mostrarSanteria = true">
+              <i class="fa-solid fa-chevron-right"></i> Santeria
+            </li>
+          </ul>
+
+          <a href="https://wa.me/3413535467" target="_blank" class="btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Contactanos
+          </a>
+        </div>
       </div>
-    </div>
 
-    <app-req-bautismos *ngIf="mostrarReqBautismos" (close)="mostrarReqBautismos = false"></app-req-bautismos>
-<app-req-catequesis *ngIf="mostrarReqCatequesis" (close)="mostrarReqCatequesis = false"></app-req-catequesis>
-<app-req-casamientos *ngIf="mostrarReqCasamientos" (close)="mostrarReqCasamientos = false"></app-req-casamientos>
-<app-info-misas *ngIf="mostrarInfoMisas" (close)="mostrarInfoMisas = false"></app-info-misas>
-   
-  
+      <app-req-bautismos *ngIf="mostrarReqBautismos" (close)="mostrarReqBautismos = false"></app-req-bautismos>
+      <app-req-catequesis *ngIf="mostrarReqCatequesis" (close)="mostrarReqCatequesis = false"></app-req-catequesis>
+      <app-req-casamientos *ngIf="mostrarReqCasamientos" (close)="mostrarReqCasamientos = false"></app-req-casamientos>
+      <app-info-misas *ngIf="mostrarInfoMisas" (close)="mostrarInfoMisas = false"></app-info-misas>
+      <app-santeria *ngIf="mostrarSanteria" (close)="mostrarSanteria = false"> </app-santeria>
 
-    <!-- Tarjeta Catequesis -->
-    <div class="card">
-      <img src="assets/oraciones.jpg" alt="Oraciones">
-      <div class="card-info">
-        <h3>Oraciones</h3>
-        <p>Novena, Oracion 1 y Oracion 2.</p>
-        <!-- <a href="https://wa.me/TUNUMERO" target="_blank" class="btn-whatsapp"> -->
+
+      <!-- Tarjeta Catequesis -->
+      <div class="card">
+        <img src="assets/oraciones.jpg" alt="Oraciones">
+        <div class="card-info">
+          <h3>Oraciones</h3>
+          <p>Novena, Oracion 1 y Oracion 2.</p>
+          <!-- <a href="https://wa.me/TUNUMERO" target="_blank" class="btn-whatsapp"> -->
           <!-- <i class="fa-brands fa-whatsapp"></i> Participar -->
-        <!-- </a> -->
+          <!-- </a> -->
+        </div>
       </div>
-    </div>
 
-    <!-- Tarjeta Cáritas -->
-    <div class="card">
-      <img src="assets/caritas1.jpg" alt="Cáritas">
-      <div class="card-info">
-        <h3>Cáritas</h3>
-        <p>Fundación San Cayetano de Thiene</p>
-        <!-- <p>Recibimos donaciones los martes y jueves de 16 a 18 hs.</p> -->
-        <a href="https://wa.me/TUNUMERO" target="_blank" class="btn-whatsapp">
-          <i class="fa-brands fa-whatsapp"></i> Participar
+      <!-- Tarjeta Cáritas -->
+      <div class="card">
+        <img src="assets/caritas1.jpg" alt="Cáritas">
+        <div class="card-info">
+          <h3>Cáritas</h3>
+          <p>Fundación San Cayetano de Thiene</p>
+          <!-- <p>Recibimos donaciones los martes y jueves de 16 a 18 hs.</p> -->
+          <a href="https://wa.me/TUNUMERO" target="_blank" class="btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Participar
+          </a>
+        </div>
+
+        <a href="https://link.mercadopago.com.ar/TU_LINK_AQUI" target="_blank" class="float-button">
+          <span class="icon">❤</span>
+          <span class="text">Donar</span>
         </a>
+
       </div>
-      
-      <a href="https://link.mercadopago.com.ar/TU_LINK_AQUI" target="_blank" class="float-button">
-        <span class="icon">❤</span>
-        <span class="text">Donar</span>
-      </a>
-      
-    </div>
 
-    <!-- Tarjeta Extra -->
-    <div class="card">
-      <img src="assets/sancayetano4.jpg" alt="Catequesis">
-      <div class="card-info">
-        <h3>Catequesis</h3>
-        <p>Acompañamos a niños y adultos en su camino de fe.</p>
-        <a href="https://wa.me/TUNUMERO" target="_blank" class="btn-whatsapp">
-          <i class="fa-brands fa-whatsapp"></i> Participar
-        </a>
+      <!-- Tarjeta Extra -->
+      <div class="card">
+        <img src="assets/sancayetano4.jpg" alt="Catequesis">
+        <div class="card-info">
+          <h3>Catequesis</h3>
+          <p>Acompañamos a niños y adultos en su camino de fe.</p>
+          <a href="https://wa.me/TUNUMERO" target="_blank" class="btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Participar
+          </a>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="assets/iglesia4.jpg" alt="Catequesis">
-      <div class="card-info">
-        <h3>Alpha</h3>
-        <p>Vaya uno a saber lo que se hace aca.</p>
-        <a href="https://wa.me/TUNUMERO" target="_blank" class="btn-whatsapp">
-          <i class="fa-brands fa-whatsapp"></i> Participar
-        </a>
+      <div class="card">
+        <img src="assets/iglesia4.jpg" alt="Catequesis">
+        <div class="card-info">
+          <h3>Alpha</h3>
+          <p>Vaya uno a saber lo que se hace aca.</p>
+          <a href="https://wa.me/TUNUMERO" target="_blank" class="btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Participar
+          </a>
+        </div>
       </div>
-    </div>
 
 
-    <!-- <div class="card">
+      <!-- <div class="card">
       <img src="assets/confesion.jpg" alt="Imagen">
       <div class="card-info">
         <h3>Confesion</h3>
@@ -106,22 +109,19 @@
       </div>
     </div> -->
 
-    <!-- Tarjeta Extra -->
-    <div class="card">
-      <img src="assets/sancayetano3.jpg" alt="Imagen">
-      <div class="card-info">
-        <h3>Misas</h3>
-        <p>Nos comparte el padre Marcelo la palabra de Dios.</p>
-        <a href="https://wa.me/TUNUMERO" target="_blank" class="btn-whatsapp">
-          <i class="fa-brands fa-whatsapp"></i> Participar
-        </a>
+      <!-- Tarjeta Extra -->
+      <div class="card">
+        <img src="assets/sancayetano3.jpg" alt="Imagen">
+        <div class="card-info">
+          <h3>Misas</h3>
+          <p>Nos comparte el padre Marcelo la palabra de Dios.</p>
+          <a href="https://wa.me/TUNUMERO" target="_blank" class="btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Participar
+          </a>
+        </div>
       </div>
-    </div>
 
     </div>
     <button class="arrow-btn right" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
   </div>
 </section>
-
-
-

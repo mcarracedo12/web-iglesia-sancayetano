@@ -4,10 +4,11 @@ import { ReqBautismos } from '../req-bautismos/req-bautismos'
 import { ReqCatequesis } from '../req-catequesis/req-catequesis';
 import { ReqCasamientos } from '../req-casamientos/req-casamientos';
 import { InfoMisas } from '../info-misas/info-misas';
+import { Santeria } from '../santeria/santeria';
 
 @Component({
   selector: 'app-comunidad',
-  imports: [CommonModule, ReqBautismos, ReqCatequesis, ReqCasamientos, InfoMisas],
+  imports: [CommonModule, ReqBautismos, ReqCatequesis, ReqCasamientos, InfoMisas, Santeria],
   templateUrl: './comunidad.html',
   styleUrl: './comunidad.scss',
 })
@@ -16,6 +17,7 @@ export class Comunidad {
   mostrarReqCatequesis: boolean = false;
   mostrarReqCasamientos: boolean =false;
   mostrarInfoMisas: boolean = false;
+  mostrarSanteria: boolean = false;
 
   abrirReqBautismos() {
     this.mostrarReqBautismos = true;
@@ -28,5 +30,8 @@ export class Comunidad {
   }
   abrirInfoMisas(){
     this.mostrarInfoMisas = true;
+  }
+  abrirSanteria(){
+    this.mostrarSanteria = true;
   }
 }
