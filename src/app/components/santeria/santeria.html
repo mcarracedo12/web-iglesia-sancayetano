@@ -1,16 +1,23 @@
-<div class="modal-overlay" (click)="cerrar()">
-  <div class="document-page" (click)="$event.stopPropagation()">
-    <button class="close-btn" (click)="cerrar()">&times;</button>
-    <div class="content">
-      <h2>Santería</h2>
-      <div class="info-grid">
-        <div class="modal-media">
-          <img src="assets/santeria.webp" alt="santeria.webp">
-        </div>
-        <div class="modal-body">
-          <p class="subtitle"><i class="fa-regular fa-clock"></i></p>
-          <p class="subtitle"><i> Todos los días </i></p>
-          <p class="subtitle"><i> de 8 a 12 hs y de 16 a 19.30 hs </i></p>
+  <div class="modal-overlay" (click)="cerrar()">
+    <div class="document-page" (click)="$event.stopPropagation()">
+      <button class="close-btn" (click)="cerrar()">&times;</button>
+      
+      <div class="content">
+        <h2>Santería</h2>
+        <div class="subtitle">Atención al público</div>
+        
+        <div class="info-grid">
+          <div class="modal-media">
+            <img src="assets/santeria.webp" alt="Santería">
+          </div>
+          
+          <div class="modal-body">
+            <p class="santeria-horario">
+              <i class="fa-regular fa-clock"></i> Todos los días
+            </p>
+            <p><strong>Mañana:</strong> de 8 a 12 hs</p>
+            <p><strong>Tarde:</strong> de 16 a 19.30 hs</p>
+          </div>
         </div>
       </div>
     </div>

@@ -5,13 +5,17 @@
     <!-- Flecha Izquierda -->
     <button class="arrow-btn left" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
 
-    <div class="cards-container" id="carouselContainer">
+    <div class="cards-container" id="carouselContainer" #carouselContainer 
+    [class.active]="isDown"
+    (mousedown)="onMouseDown($event)"
+    (mouseleave)="onMouseLeave()"
+    (mouseup)="onMouseUp()"
+    (mousemove)="onMouseMove($event)">
       <!-- Tarjeta Secretaria -->
       <div class="card">
         <img src="assets/misa1.jpg" alt="Secretaria">
         <div class="card-info">
           <h3>Secretaria</h3>
-
           <ul class="card-menu">
             <li (click)="mostrarReqBautismos = true">
               <i class="fa-solid fa-chevron-right"></i> Requisitos para Bautismos
@@ -35,14 +39,11 @@
           </a>
         </div>
       </div>
-
       <app-req-bautismos *ngIf="mostrarReqBautismos" (close)="mostrarReqBautismos = false"></app-req-bautismos>
       <app-req-catequesis *ngIf="mostrarReqCatequesis" (close)="mostrarReqCatequesis = false"></app-req-catequesis>
       <app-req-casamientos *ngIf="mostrarReqCasamientos" (close)="mostrarReqCasamientos = false"></app-req-casamientos>
       <app-info-misas *ngIf="mostrarInfoMisas" (close)="mostrarInfoMisas = false"></app-info-misas>
       <app-santeria *ngIf="mostrarSanteria" (close)="mostrarSanteria = false"> </app-santeria>
-
-
 
 
       <!-- Tarjeta Cáritas -->
@@ -56,12 +57,10 @@
             <i class="fa-brands fa-whatsapp"></i> Participar
           </a>
         </div>
-
         <a href="https://link.mercadopago.com.ar/TU_LINK_AQUI" target="_blank" class="float-button">
           <span class="icon">❤</span>
           <span class="text">Donar</span>
         </a>
-
       </div>
 
       <!-- Tarjeta Extra -->

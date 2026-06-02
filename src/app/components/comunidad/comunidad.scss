@@ -10,6 +10,11 @@
     scroll-snap-type: x mandatory; // Hace que las tarjetas "encajen" al deslizar
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch; // Suavidad extra en iPhones
+    cursor: grab;
+    &.active {
+      cursor: grabbing; // Icono de manito cerrada
+      scroll-snap-type: none; // Desactivamos el "encaje" temporalmente para que fluya libre con el mouse
+    }
     
     // Escondemos la barra de scroll para que se vea más limpio
     &::-webkit-scrollbar { display: none; } 

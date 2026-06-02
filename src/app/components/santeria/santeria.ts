@@ -1,15 +1,19 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-santeria',
   imports: [],
   templateUrl: './santeria.html',
-  styleUrl: './santeria.scss',
+  styleUrl: '../../../styles.scss',
 })
 
 export class Santeria {
   @Output()close = new EventEmitter<void>();
   cerrar(){
     this.close.emit();
+  }
+  @HostListener('document:keydown.escape')
+  manejarEsc() {
+    this.cerrar();
   }
 }
