@@ -5,10 +5,15 @@ import { ReqCatequesis } from '../req-catequesis/req-catequesis';
 import { ReqCasamientos } from '../req-casamientos/req-casamientos';
 import { InfoMisas } from '../info-misas/info-misas';
 import { Santeria } from '../santeria/santeria';
+import { CatNino } from '../cat-nino/cat-nino';
+import { CatAdol } from '../cat-adol/cat-adol';
+import { CatJovAdul } from '../cat-jov-adul/cat-jov-adul';
+import { CatMatrimonios } from '../cat-matrimonios/cat-matrimonios';
+import { CatAlpha } from '../cat-alpha/cat-alpha';
 
 @Component({
   selector: 'app-comunidad',
-  imports: [CommonModule, ReqBautismos, ReqCatequesis, ReqCasamientos, InfoMisas, Santeria],
+  imports: [CommonModule, ReqBautismos, ReqCatequesis, ReqCasamientos, InfoMisas, Santeria, CatNino, CatAdol, CatJovAdul, CatMatrimonios, CatAlpha],
   templateUrl: './comunidad.html',
   styleUrl: './comunidad.scss',
 })
@@ -19,6 +24,11 @@ export class Comunidad {
   mostrarReqCasamientos: boolean =false;
   mostrarInfoMisas: boolean = false;
   mostrarSanteria: boolean = false;
+  mostrarCatNinos: boolean = false;
+  mostrarCatAdol: boolean = false;
+  mostrarCatJovAdul: boolean = false;
+  mostrarCatMatrimonios: boolean = false;
+  mostrarAlpha: boolean = false; 
 
   abrirReqBautismos() {
     this.mostrarReqBautismos = true;
@@ -34,6 +44,21 @@ export class Comunidad {
   }
   abrirSanteria(){
     this.mostrarSanteria = true;
+  }
+  abrirCatNinos(){
+    this.mostrarCatNinos = true;
+  }
+  abrirCatAdol(){
+    this.mostrarCatAdol = true;
+  }
+  abrirCatJovAdul(){
+    this.mostrarCatJovAdul = true;
+  }
+  abrirCatMatrimonios(){
+    this.mostrarCatMatrimonios = true;
+  }
+  abrirAlpha(){
+    this.mostrarAlpha = true;
   }
 
   // Obtenemos la referencia local del contenedor de las tarjetas
