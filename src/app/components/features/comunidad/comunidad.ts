@@ -1,50 +1,28 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReqBautismos } from '../req-bautismos/req-bautismos'
-import { ReqCatequesis } from '../req-catequesis/req-catequesis';
-import { ReqCasamientos } from '../req-casamientos/req-casamientos';
-import { InfoMisas } from '../info-misas/info-misas';
-import { Santeria } from '../santeria/santeria';
-import { CatNino } from '../cat-nino/cat-nino';
-import { CatAdol } from '../cat-adol/cat-adol';
-import { CatJovAdul } from '../cat-jov-adul/cat-jov-adul';
-import { CatMatrimonios } from '../cat-matrimonios/cat-matrimonios';
-import { CatAlpha } from '../cat-alpha/cat-alpha';
+import { Secretaria } from './sections/secretaria/secretaria';
+import { Catequesis } from './sections/catequesis/catequesis';
+
+import { CatNino } from './sections/catequesis/modals/cat-nino/cat-nino';
+import { CatAdol } from './sections/catequesis/modals/cat-adol/cat-adol';
+import { CatJovAdul } from './sections/catequesis/modals/cat-jov-adul/cat-jov-adul';
+import { CatMatrimonios } from './sections/catequesis/modals/cat-matrimonios/cat-matrimonios';
+import { CatAlpha } from './sections/catequesis/modals/cat-alpha/cat-alpha';
 
 @Component({
   selector: 'app-comunidad',
-  imports: [CommonModule, ReqBautismos, ReqCatequesis, ReqCasamientos, InfoMisas, Santeria, CatNino, CatAdol, CatJovAdul, CatMatrimonios, CatAlpha],
+  imports: [CommonModule, Secretaria, Catequesis, CatNino, CatAdol, CatJovAdul, CatMatrimonios, CatAlpha],
   templateUrl: './comunidad.html',
-  styleUrl: './comunidad.scss',
+  styleUrl: './comunidad.scss'
 })
 export class Comunidad {
-  
-  mostrarReqBautismos: boolean = false;
-  mostrarReqCatequesis: boolean = false;
-  mostrarReqCasamientos: boolean =false;
-  mostrarInfoMisas: boolean = false;
-  mostrarSanteria: boolean = false;
+
   mostrarCatNinos: boolean = false;
   mostrarCatAdol: boolean = false;
   mostrarCatJovAdul: boolean = false;
   mostrarCatMatrimonios: boolean = false;
   mostrarAlpha: boolean = false; 
 
-  abrirReqBautismos() {
-    this.mostrarReqBautismos = true;
-  }
-  abrirReqCatequesis() {
-    this.mostrarReqCatequesis = true;
-  }
-  abrirReqCasamientos(){
-    this.mostrarReqCasamientos = true;
-  }
-  abrirInfoMisas(){
-    this.mostrarInfoMisas = true;
-  }
-  abrirSanteria(){
-    this.mostrarSanteria = true;
-  }
   abrirCatNinos(){
     this.mostrarCatNinos = true;
   }

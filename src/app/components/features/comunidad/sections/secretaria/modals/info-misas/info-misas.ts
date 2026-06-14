@@ -4,7 +4,7 @@ import { Component, EventEmitter, Output, HostListener } from '@angular/core';
   selector: 'app-info-misas',
   imports: [],
   templateUrl: './info-misas.html',
-  styleUrl: '../../../styles.scss',
+  styleUrl: './../../../../comunidad.scss',
 })
 export class InfoMisas {
   @Output()close = new EventEmitter<void>();

@@ -2,6 +2,51 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
 
+## Code Structure
+
+src/app/
+└── components/
+    ├── shared/                 
+    │   ├── navbar/
+    │   ├── footer/
+    │   └── donaciones/
+    └── features/               
+        ├── comunidad/ 
+        │   ├── comunidad.component.ts / .html / .scss
+        │   └── sections/
+        │       ├── secretaria/
+        │       │   ├── secretaria.secretaria.ts / .html / .scss
+        │       │   └── modals/            
+        │       │       ├── req-bautismos/
+        │       │       │   └── req-bautismos.req-bautismos.ts / .html 
+        │       │       ├── req-catequesis/
+        │       │       │   └── req-catequesis.req-catequesis.ts / .html 
+        │       │       ├── req-casamientos/
+        │       │       │   └── req-casamientos.req-casamientos.ts / .html   
+        │       │       ├── info-misas/
+        │       │       │   └── info-misas.info-misas.ts / .html
+        │       │       └── santeria/ 
+        │       │           └── santeria.santeria.ts / .html  
+        │       ├── catequesis/
+        │       │   ├── catequesis.catequesis.ts / .html / .scss
+        │       │   └── modales/            
+        │       │       ├── cat-nino/
+        │       │       │   └── cat-nino.cat-nino.ts / .html
+        │       │       ├── cat-adol/
+        │       │       │   └── cat-adol.cat-adol.ts / .html
+        │       │       ├── cat-jov-adul/
+        │       │       │   └── cat-jov-adul.cat-jov-adul / .html
+        │       │       ├── cat-matrimonios/
+        │       │       │   └── cat-matrimonios.cat-matrimonios.ts / .html
+        │       │       └── cat-alpha/
+        │       │           └── cat-alpha.cat-alpha.ts / .html 
+        │       ├── caritas/  
+        │       │   ├── caritas.caritas.ts / .html / .scss
+        │       │   └── modales/            
+        │       │       ├── ????/
+        ├── historia/
+        └── contacto/
+
 ## Development server
 
 To start a local development server, run:

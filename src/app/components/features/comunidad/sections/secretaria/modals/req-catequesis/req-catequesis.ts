@@ -5,7 +5,7 @@ import { Component, EventEmitter, Output, HostListener } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './req-catequesis.html',
-  styleUrl: '../../../styles.scss',
+  styleUrl: './../../../../comunidad.scss',
 })
 export class ReqCatequesis {
   @Output()close = new EventEmitter<void>();

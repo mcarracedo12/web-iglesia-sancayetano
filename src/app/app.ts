@@ -1,9 +1,9 @@
 import { Component, signal, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Nav } from './components/nav/nav'
-import { Comunidad } from './components/comunidad/comunidad';
-import { Hero } from './components/hero/hero';
-import { Donaciones } from './components/donaciones/donaciones';
+import { Nav } from './components/shared/nav/nav'
+import { Hero } from './components/shared/hero/hero';
+import { Donaciones } from './components/shared/donaciones/donaciones';
+import { Comunidad } from './components/features/comunidad/comunidad';
 import { Redes } from './components/redes/redes';
 import { Cultura } from './components/cultura/cultura'
 import { Oraciones } from './components/oraciones/oraciones';

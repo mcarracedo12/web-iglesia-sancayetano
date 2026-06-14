@@ -1,12 +1,12 @@
 import { Component, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-cat-nino',
+  selector: 'app-cat-alpha',
   imports: [],
-  templateUrl: './cat-nino.html',
-  styleUrl: '../../../styles.scss',
+  templateUrl: './cat-alpha.html',
+  styleUrl: './../../../../comunidad.scss',
 })
-export class CatNino {
+export class CatAlpha {
   @Output()close = new EventEmitter<void>();
   cerrar(){
     this.close.emit();

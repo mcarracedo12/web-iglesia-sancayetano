@@ -1,12 +1,13 @@
 import { Component, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-cat-matrimonios',
+  selector: 'app-santeria',
   imports: [],
-  templateUrl: './cat-matrimonios.html',
-  styleUrl: '../../../styles.scss',
+  templateUrl: './santeria.html',
+  styleUrl: './../../../../comunidad.scss',
 })
-export class CatMatrimonios {
+
+export class Santeria {
   @Output()close = new EventEmitter<void>();
   cerrar(){
     this.close.emit();

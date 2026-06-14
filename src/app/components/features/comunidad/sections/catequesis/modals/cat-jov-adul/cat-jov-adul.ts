@@ -4,7 +4,7 @@ import { Component, Output, EventEmitter, HostListener } from '@angular/core';
   selector: 'app-cat-jov-adul',
   imports: [],
   templateUrl: './cat-jov-adul.html',
-  styleUrl: '../../../styles.scss',
+  styleUrl: './../../../../comunidad.scss',
 })
 export class CatJovAdul {
   @Output()close = new EventEmitter<void>();

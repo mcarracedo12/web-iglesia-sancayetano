@@ -1,12 +1,12 @@
 import { Component, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-cat-adol',
+  selector: 'app-cat-matrimonios',
   imports: [],
-  templateUrl: './cat-adol.html',
-  styleUrl: '../../../styles.scss',
+  templateUrl: './cat-matrimonios.html',
+  styleUrl: './../../../../comunidad.scss',
 })
-export class CatAdol {
+export class CatMatrimonios {
   @Output()close = new EventEmitter<void>();
   cerrar(){
     this.close.emit();

@@ -4,7 +4,7 @@ import { Component, Output, EventEmitter, HostListener } from '@angular/core';
   selector: 'app-req-casamientos',
   imports: [],
   templateUrl: './req-casamientos.html',
-  styleUrl: '../../../styles.scss',
+  styleUrl: './../../../../comunidad.scss',
 })
 export class ReqCasamientos {
   @Output()close = new EventEmitter<void>();

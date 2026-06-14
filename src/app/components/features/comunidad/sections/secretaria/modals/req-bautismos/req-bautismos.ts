@@ -5,7 +5,7 @@ import { Component, EventEmitter, Output, HostListener } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './req-bautismos.html',
-  styleUrl: '../../../styles.scss',
+  styleUrl: './../../../../comunidad.scss',
 })
 export class ReqBautismos {
   @Output()close = new EventEmitter<void>();
