@@ -1,0 +1,1254 @@
+// // // .comunidad-grid {
+// // //   padding: 50px 20px;
+// // //   text-align: center;
+
+// // //   .cards-container {
+// // //     display: flex; // Cambiamos grid por flex para la fila única
+// // //     gap: 25px;
+// // //     overflow-x: auto; // Habilita el scroll horizontal
+// // //     padding: 20px 10px;
+// // //     scroll-snap-type: x mandatory; // Hace que las tarjetas "encajen" al deslizar
+// // //     scroll-behavior: smooth;
+// // //     -webkit-overflow-scrolling: touch; // Suavidad extra en iPhones
+// // //     cursor: grab;
+// // //     &.active {
+// // //       cursor: grabbing; // Icono de manito cerrada
+// // //       scroll-snap-type: none; // Desactivamos el "encaje" temporalmente para que fluya libre con el mouse
+// // //     }
+    
+// // //     // Escondemos la barra de scroll para que se vea más limpio
+// // //     &::-webkit-scrollbar { display: none; } 
+// // //     -ms-overflow-style: none; 
+// // //     scrollbar-width: none; 
+// // //   }
+
+// // //   .card {
+// // //     flex: 0 0 400px; // No se achican, siempre miden 300px
+// // //     scroll-snap-align: center; // La tarjeta se centra al scrollear
+// // //     background: #fff;
+// // //     border-radius: 15px;
+// // //     overflow: hidden;
+// // //     border: 1px solid #eee;
+// // //     transition: transform 0.3s ease;
+// // //     display: flex;
+// // //     flex-direction: column;
+// // //     position: relative; // ← IMPORTANTE: Le da el marco de referencia al botón de donar absoluto
+
+// // //     &:hover { transform: scale(1.02); }
+
+// // //     img {
+// // //       width: 100%;
+// // //       aspect-ratio: 1 / 1;
+// // //       object-fit: cover;
+// // //       object-position: top;
+// // //     }
+
+// // //     .card-info {
+// // //       padding: 20px;
+// // //       text-align: left;
+// // //       flex-grow: 1;
+// // //       display: flex;
+// // //       flex-direction: column;
+// // //       justify-content: space-between;
+    
+// // //       h3 { 
+// // //         margin: 0 0 12px 0; 
+// // //         color: #34495e; // Un gris oscuro suave en vez de negro puro
+// // //       }
+    
+// // //       // NUEVO: Estilo para la lista compacta
+// // //       .card-menu {
+// // //         list-style: none;
+// // //         padding: 0;
+// // //         margin: 0 0 20px 0; // Despega solo de abajo (del botón de WhatsApp)
+// // //         display: flex;
+// // //         flex-direction: column;
+// // //         gap: 8px; // Controlás la separación exacta entre cada punto de forma milimétrica
+    
+// // //         li {
+// // //           font-size: 0.9rem;
+// // //           color: #555;
+// // //           cursor: pointer;
+// // //           padding: 6px 8px;
+// // //           border-radius: 6px;
+// // //           display: flex;
+// // //           align-items: center;
+// // //           gap: 8px;
+// // //           transition: all 0.2s ease;
+    
+// // //           i {
+// // //             font-size: 0.75rem;
+// // //             color: #bdc3c7; // Flechita sutil
+// // //             transition: transform 0.2s;
+// // //           }
+    
+// // //           // Efecto suave al pasar el mouse para avisar que es un botón
+// // //           &:hover {
+// // //             background-color: #f0f4f8; // Fondo gris pastel ultra claro
+// // //             color: #2b4c7e;
+            
+// // //             i {
+// // //               color: #4a76a8; // La flechita toma color sutil
+// // //               transform: translateX(3px); // Se mueve un poquito a la derecha
+// // //             }
+// // //           }
+// // //         }
+// // //       }
+    
+// // //       .btn-whatsapp {
+// // //         // Tu estilo actual de WhatsApp se mantiene intacto...
+// // //         display: inline-flex;
+// // //         align-items: center;
+// // //         gap: 8px;
+// // //         background-color: #25d366;
+// // //         color: white;
+// // //         text-decoration: none;
+// // //         padding: 8px 15px;
+// // //         border-radius: 5px;
+// // //         font-weight: bold;
+// // //         font-size: 0.85rem;
+// // //         width: fit-content;
+// // //       }
+// // //     }
+// // //   }
+
+// // //   @media (max-width: 600px) {
+// // //     .card {
+// // //       flex: 0 0 85%; // En celu se ve una tarjeta casi entera y un pedacito de la otra
+// // //     }
+// // //   }
+// // // }
+
+// // // .carousel-wrapper {
+// // //   position: relative;
+// // //   display: flex;
+// // //   align-items: center;
+// // //   max-width: 1100px;
+// // //   margin: 0 auto;
+// // //   padding: 0 40px; // Agregamos aire a los costados para que las flechas no tapen las fotos
+
+// // //   .arrow-btn {
+// // //     position: absolute;
+// // //     top: 50%;
+// // //     transform: translateY(-50%);
+// // //     background: rgba(255, 255, 255, 0.8);
+// // //     border: 1px solid #eee;
+// // //     width: 40px;
+// // //     height: 40px;
+// // //     border-radius: 50%;
+// // //     cursor: pointer;
+// // //     z-index: 10;
+// // //     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+// // //     transition: all 0.3s;
+
+// // //     &:hover { background: #fff; transform: translateY(-50%) scale(1.1); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
+// // //     &.left { left: 0; }
+// // //     &.right { right: 0; }
+
+// // //     i { color: #2c3e50; font-size: 1.2rem; }
+// // //   }
+// // // }
+
+// // // /* --- Ajuste para el "Tamaño Intermedio" --- */
+// // // @media (max-width: 850px) {
+// // //   .carousel-wrapper {
+// // //     padding: 0 10px; // En tablets achicamos el margen lateral
+    
+// // //     .arrow-btn {
+// // //       width: 35px;
+// // //       height: 35px; // Flechas un poco más sutiles
+// // //       &.left { left: 5px; }
+// // //       &.right { right: 5px; }
+// // //     }
+// // //   }
+// // // }
+
+// // // @media (max-width: 480px) {
+// // //   .carousel-wrapper {
+// // //     padding: 0;
+// // //   }
+  
+// // //   .comunidad-grid .cards-container {
+// // //     padding: 10px; // Menos espacio para que se vea más contenido
+// // //   }
+// // // }
+
+// // // /* --- ESTILO CORREGIDO DEL BOTÓN DE DONAR INTERNO --- */
+// // // .float-button {
+// // //   position: absolute; // ← Cambiado a absolute para ubicarlo exactamente sobre la esquina de la tarjeta
+// // //   bottom: 20px; 
+// // //   right: 20px;
+// // //   background-color: #e74c3c; 
+// // //   color: white;
+// // //   text-decoration: none;
+// // //   padding: 8px 15px; // ← Un poquito más compacto para que mantenga proporción dentro de la card
+// // //   border-radius: 50px;
+// // //   display: inline-flex; // ← Cambiado a inline-flex para que mida solo lo que ocupa su texto interno
+// // //   align-items: center;
+// // //   gap: 8px;
+// // //   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+// // //   z-index: 5;
+// // //   transition: transform 0.3s ease, background-color 0.3s ease;
+
+// // //   &:hover {
+// // //     transform: scale(1.05); // Un hover un toque más sutil para la tarjeta
+// // //     background-color: #c0392b;
+// // //   }
+
+// // //   .icon { font-size: 1.1rem; }
+// // //   .text { font-size: 0.85rem; font-weight: bold } // Asegura tipografía limpia
+
+// // //   @media (max-width: 600px) {
+// // //     bottom: 20px; // ← En celu lo dejamos abajo fijado en la tarjeta, sin subirlo a la pantalla
+// // //     padding: 0;
+// // //     border-radius: 50%;
+// // //     width: 38px; // ← Más compacto en celular para convivir perfecto con WhatsApp
+// // //     height: 38px;
+// // //     justify-content: center;
+
+// // //     .text { display: none; } 
+// // //   }
+// // // }
+
+// // // /* ==========================================================================
+// // //    ESTILOS UNIFICADOS PARA MODALES DE COMUNIDAD (Document Page)
+// // //    ========================================================================== */
+// // //    :host ::ng-deep {
+// // //     .modal-overlay {
+// // //       position: fixed;
+// // //       top: 0;
+// // //       left: 0;
+// // //       width: 100%;
+// // //       height: 100%;
+// // //       background: rgba(43, 76, 126, 0.4); // Fondo oscuro con tinte azul sutil
+// // //       display: flex;
+// // //       justify-content: center;
+// // //       align-items: center;
+// // //       z-index: 2000;
+// // //       backdrop-filter: blur(5px);
+// // //     }
+  
+// // //     .document-page {
+// // //       background-color: #ffffff;
+// // //       width: 90%;
+// // //       max-width: 850px;
+// // //       max-height: 85vh;
+// // //       padding: 40px; // Un toque más de aire general
+// // //       border-radius: 12px;
+// // //       box-shadow: 0 10px 30px rgba(43, 76, 126, 0.15);
+// // //       position: relative;
+// // //       overflow-y: auto;
+// // //       border-top: 8px solid #4a76a8;
+  
+// // //       .close-btn {
+// // //         position: absolute;
+// // //         top: 15px;
+// // //         right: 20px;
+// // //         font-size: 2rem;
+// // //         color: #8da9c4;
+// // //         cursor: pointer;
+// // //         border: none;
+// // //         background: transparent;
+// // //         transition: color 0.2s;
+  
+// // //         &:hover {
+// // //           color: #4a76a8;
+// // //         }
+// // //       }
+  
+// // //       // Contenedor interno principal
+// // //       .content {
+// // //         display: flex;
+// // //         flex-direction: column;
+// // //       }
+  
+// // //       h2 {
+// // //         color: #2b4c7e;
+// // //         text-align: center;
+// // //         font-size: 1.8rem;
+// // //         margin-top: 0;
+// // //         margin-bottom: 8px; // Control de espacio inferior
+// // //         font-weight: 600;
+// // //       }
+  
+// // //       .subtitle {
+// // //         text-align: center;
+// // //         color: #647a95;
+// // //         font-size: 1rem;
+// // //         margin-top: 0;
+// // //         margin-bottom: 35px; // ← MODIFICADO: Más separación antes de la info/foto
+// // //         font-weight: 500;
+  
+// // //         i {
+// // //           margin-right: 5px;
+// // //           color: #4a76a8;
+// // //         }
+// // //       }
+  
+// // //       // Grid responsivo: Foto izquierda, Texto derecha
+// // //       .info-grid {
+// // //         display: flex;
+// // //         flex-direction: column;
+// // //         gap: 30px; // Un poco más de espacio entre columnas
+  
+// // //         @media (min-width: 768px) {
+// // //           flex-direction: row;
+// // //           align-items: flex-start;
+// // //         }
+// // //       }
+  
+// // //       // Contenedor de la foto
+// // //       .modal-media {
+// // //         width: 100%;
+  
+// // //         @media (min-width: 768px) {
+// // //           width: 40%;
+// // //           position: sticky;
+// // //           top: 0;
+// // //         }
+  
+// // //         img {
+// // //           width: 100%;
+// // //           height: 260px;
+// // //           object-fit: cover;
+// // //           border-radius: 8px;
+// // //           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+// // //         }
+// // //       }
+  
+// // //       // Contenedor del texto de requisitos / horarios
+// // //       .modal-body {
+// // //         width: 100%;
+  
+// // //         @media (min-width: 768px) {
+// // //           width: 60%;
+// // //           // Si el contenido es corto (ej. Santería), lo centra verticalmente con la foto
+// // //           display: flex;
+// // //           flex-direction: column;
+// // //           justify-content: center;
+// // //           min-height: 200px;
+// // //         }
+  
+// // //         // Párrafos sueltos (como los de Santería)
+// // //         p {
+// // //           color: #4a5568;
+// // //           font-size: 1.05rem;
+// // //           line-height: 1.6;
+// // //           margin: 0 0 12px 0;
+// // //         }
+  
+// // //         // Estilo específico para los subtítulos internos de Santería
+// // //         .santeria-horario {
+// // //           font-size: 1.2rem;
+// // //           color: #2b4c7e;
+// // //           font-weight: 500;
+// // //           margin-bottom: 5px;
+  
+// // //           i {
+// // //             color: #4a76a8;
+// // //             margin-right: 8px;
+// // //           }
+// // //         }
+  
+// // //         h4 {
+// // //           color: #3b5984;
+// // //           font-size: 1.1rem;
+// // //           margin: 25px 0 12px 0; // Más aire arriba de cada sección interna
+// // //           font-weight: 600;
+  
+// // //           i {
+// // //             font-size: 0.95rem;
+// // //             margin-left: 5px;
+// // //             color: #647a95;
+// // //           }
+  
+// // //           &:first-of-type {
+// // //             margin-top: 0; // Si es el primer título, que no empuje de más
+// // //           }
+// // //         }
+  
+// // //         ul {
+// // //           padding-left: 20px;
+// // //           margin: 0 0 15px 0;
+  
+// // //           li {
+// // //             color: #4a5568;
+// // //             font-size: 0.95rem;
+// // //             line-height: 1.6;
+// // //             margin-bottom: 10px;
+  
+// // //             &::marker {
+// // //               color: #4a76a8;
+// // //             }
+// // //           }
+// // //         }
+// // //       }
+// // //     }
+// // //   }
+
+
+// // /* ==========================================================================
+// //    ESTILOS GENERALES DEL GRID Y EL CONTENEDOR (CARRUSEL)
+// //    ========================================================================== */
+
+// //    .comunidad-grid {
+// //     padding: 50px 20px;
+// //     text-align: center;
+  
+// //     h2 {
+// //       color: #34495e;
+// //       margin-bottom: 20px;
+// //     }
+// //   }
+  
+// //     .cards-container {
+// //       display: flex; // Fila única para el carrusel
+// //       gap: 25px;
+// //       overflow-x: auto; // Scroll horizontal
+// //       padding: 20px 10px;
+// //       scroll-snap-type: x mandatory; // Encaje de tarjetas
+// //       scroll-behavior: smooth;
+// //       -webkit-overflow-scrolling: touch;
+// //       cursor: grab;
+      
+// //       // Escondemos la barra de scroll nativa
+// //       &::-webkit-scrollbar { display: none; } 
+// //       -ms-overflow-style: none; 
+// //       scrollbar-width: none; 
+  
+// //       &.active {
+// //         cursor: grabbing;
+// //         scroll-snap-type: none; // Permite arrastrar libremente con el mouse
+// //       }
+// //     }
+  
+// //     /* ==========================================================================
+// //        EL MOLDE COMPLETO DE LA TARJETA (Aplica a los divs o selectores hijos)
+// //        ========================================================================== */
+// //     .card, app-secretaria, app-catequesis, app-caritas {
+// //       flex: 0 0 400px; // Ancho fijo por defecto en PC
+// //       scroll-snap-align: center;
+// //       background: #fff;
+// //       border-radius: 15px;
+// //       overflow: hidden;
+// //       border: 1px solid #eee;
+// //       transition: transform 0.3s ease;
+// //       display: flex;
+// //       flex-direction: column;
+// //       position: relative; // Marco de referencia para el botón flotante
+  
+// //       &:hover { 
+// //         transform: scale(1.02); 
+// //       }
+  
+// //       // Imagen de la tarjeta
+// //       img {
+// //         width: 100%;
+// //         aspect-ratio: 1 / 1;
+// //         object-fit: cover;
+// //         object-position: top;
+// //       }
+// //     }
+  
+// //       // Bloque de información interna de la tarjeta
+// //       .card-info {
+// //         padding: 20px;
+// //         text-align: left;
+// //         flex-grow: 1;
+// //         display: flex;
+// //         flex-direction: column;
+// //         justify-content: space-between;
+      
+// //         h3 { 
+// //           margin: 0 0 12px 0; 
+// //           color: #34495e; 
+// //         }
+  
+// //         p {
+// //           color: #555;
+// //           font-size: 0.95rem;
+// //           line-height: 1.5;
+// //           margin: 0 0 20px 0;
+// //         }
+// //       }
+// //         /* Lista de opciones compacta (Específica de Secretaría) */
+// //         .card-menu {
+// //           list-style: none;
+// //           padding: 0;
+// //           margin: 0 0 20px 0;
+// //           display: flex;
+// //           flex-direction: column;
+// //           gap: 8px;
+      
+// //           li {
+// //             font-size: 0.9rem;
+// //             color: #555;
+// //             cursor: pointer;
+// //             padding: 6px 8px;
+// //             border-radius: 6px;
+// //             display: flex;
+// //             align-items: center;
+// //             gap: 8px;
+// //             transition: all 0.2s ease;
+      
+// //             i {
+// //               font-size: 0.75rem;
+// //               color: #bdc3c7;
+// //               transition: transform 0.2s;
+// //             }
+      
+// //             &:hover {
+// //               background-color: #f0f4f8;
+// //               color: #2b4c7e;
+              
+// //               i {
+// //                 color: #4a76a8;
+// //                 transform: translateX(3px);
+// //               }
+// //             }
+// //           }
+// //         }
+      
+// //         /* Botón de WhatsApp integrado en cada tarjeta */
+// //         .btn-whatsapp {
+// //           display: inline-flex;
+// //           align-items: center;
+// //           gap: 8px;
+// //           background-color: #25d366;
+// //           color: white;
+// //           text-decoration: none;
+// //           padding: 8px 15px;
+// //           border-radius: 5px;
+// //           font-weight: bold;
+// //           font-size: 0.85rem;
+// //           width: fit-content;
+// //           margin-top: auto; // Se empuja al fondo si el contenido es corto
+// //         }
+      
+  
+// //       /* Botón flotante interno (Específico para Donaciones en Cáritas) */
+// //       .float-button {
+// //         position: absolute;
+// //         bottom: 20px; 
+// //         right: 20px;
+// //         background-color: #e74c3c; 
+// //         color: white;
+// //         text-decoration: none;
+// //         padding: 8px 15px;
+// //         border-radius: 50px;
+// //         display: inline-flex;
+// //         align-items: center;
+// //         gap: 8px;
+// //         box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+// //         z-index: 5;
+// //         transition: transform 0.3s ease, background-color 0.3s ease;
+  
+// //         &:hover {
+// //           transform: scale(1.05);
+// //           background-color: #c0392b;
+// //         }
+  
+// //         .icon { font-size: 1.1rem; }
+// //         .text { font-size: 0.85rem; font-weight: bold; }
+// //       }
+    
+  
+  
+// //   /* ==========================================================================
+// //      ESTILOS DE LAS FLECHAS DEL CARRUSEL (Wrapper exterior)
+// //      ========================================================================== */
+  
+// //   .carousel-wrapper {
+// //     position: relative;
+// //     display: flex;
+// //     align-items: center;
+// //     max-width: 1100px;
+// //     margin: 0 auto;
+// //     padding: 0 40px; // Espacio lateral para las flechas
+  
+// //     .arrow-btn {
+// //       position: absolute;
+// //       top: 50%;
+// //       transform: translateY(-50%);
+// //       background: rgba(255, 255, 255, 0.8);
+// //       border: 1px solid #eee;
+// //       width: 40px;
+// //       height: 40px;
+// //       border-radius: 50%;
+// //       cursor: pointer;
+// //       z-index: 10;
+// //       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+// //       transition: all 0.3s;
+  
+// //       &:hover { 
+// //         background: #fff; 
+// //         transform: translateY(-50%) scale(1.1); 
+// //         box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
+// //       }
+      
+// //       &.left { left: 0; }
+// //       &.right { right: 0; }
+  
+// //       i { color: #2c3e50; font-size: 1.2rem; }
+// //     }
+// //   }
+  
+// //   /* ==========================================================================
+// //      ADAPTACIONES RESPONSIVAS (MEDIA QUERIES) ORDENADAS
+// //      ========================================================================== */
+  
+// //   /* 1. Tamaño Intermedio: Tablets (max-width: 850px) */
+// //   @media (max-width: 850px) {
+// //     .carousel-wrapper {
+// //       padding: 0 10px; // Achicamos márgenes laterales para ganar pantalla
+      
+// //       .arrow-btn {
+// //         width: 35px;
+// //         height: 35px;
+// //         &.left { left: 5px; }
+// //         &.right { right: 5px; }
+// //       }
+// //     }
+// //   }
+  
+// //   /* 2. Tamaño Móvil General: Celulares (max-width: 600px) */
+// //   @media (max-width: 600px) {
+// //     .comunidad-grid {
+// //       // Las tarjetas pasan a ocupar la mayor parte de la pantalla móvil
+// //       .card, app-secretaria, app-catequesis, app-caritas {
+// //         flex: 0 0 85%; 
+// //       }
+  
+// //       // El botón de donar en celular se hace redondo y compacto para convivir con WhatsApp
+// //       .card .float-button {
+// //         bottom: 20px;
+// //         padding: 0;
+// //         border-radius: 50%;
+// //         width: 38px;
+// //         height: 38px;
+// //         justify-content: center;
+  
+// //         .text { display: none; } // Esconde la palabra "Donar" y deja solo el ❤
+// //       }
+// //     }
+  
+  
+// //   /* 3. Tamaño Móvil Pequeño (max-width: 480px) */
+// //   @media (max-width: 480px) {
+// //     .carousel-wrapper {
+// //       padding: 0; // Sacamos todo el padding exterior para exprimir la pantalla
+// //     }
+    
+// //     .comunidad-grid .cards-container {
+// //       padding: 10px; // Menos espacio entre el contenedor y las tarjetas
+// //     }
+// //   }
+
+// //   //       // NUEVO: Estilo para la lista compacta
+// //       .card-menu {
+// //         list-style: none;
+// //         padding: 0;
+// //         margin: 0 0 20px 0; // Despega solo de abajo (del botón de WhatsApp)
+// //         display: flex;
+// //         flex-direction: column;
+// //         gap: 8px; // Controlás la separación exacta entre cada punto de forma milimétrica
+    
+// //         li {
+// //           font-size: 0.9rem;
+// //           color: #555;
+// //           cursor: pointer;
+// //           padding: 6px 8px;
+// //           border-radius: 6px;
+// //           display: flex;
+// //           align-items: center;
+// //           gap: 8px;
+// //           transition: all 0.2s ease;
+    
+// //           i {
+// //             font-size: 0.75rem;
+// //             color: #bdc3c7; // Flechita sutil
+// //             transition: transform 0.2s;
+// //           }
+    
+// //           // Efecto suave al pasar el mouse para avisar que es un botón
+// //           &:hover {
+// //             background-color: #f0f4f8; // Fondo gris pastel ultra claro
+// //             color: #2b4c7e;
+            
+// //             i {
+// //               color: #4a76a8; // La flechita toma color sutil
+// //               transform: translateX(3px); // Se mueve un poquito a la derecha
+// //             }
+// //           }
+// //         }
+// //       }
+
+
+// /* ==========================================================================
+//    ESTILOS GENERALES DEL GRID Y EL CONTENEDOR (CARRUSEL)
+//    ========================================================================== */
+
+//    .comunidad-grid {
+//     padding: 50px 20px;
+//     text-align: center;
+  
+//     h2 {
+//       color: #34495e;
+//       margin-bottom: 20px;
+//     }
+  
+//     .cards-container {
+//       display: flex; 
+//       gap: 25px;
+//       overflow-x: auto; 
+//       padding: 20px 10px;
+//       scroll-snap-type: x mandatory; 
+//       scroll-behavior: smooth;
+//       -webkit-overflow-scrolling: touch;
+//       cursor: grab;
+      
+//       &::-webkit-scrollbar { display: none; } 
+//       -ms-overflow-style: none; 
+//       scrollbar-width: none; 
+  
+//       &.active {
+//         cursor: grabbing;
+//         scroll-snap-type: none; 
+//       }
+//     }
+  
+//     /* ==========================================================================
+//        EL CORAZÓN DEL PROBLEMA: EL SELECTOR DE LA TARJETA
+//        Usamos :ng-deep para obligar al CSS a entrar a los componentes nuevos
+//        ========================================================================== */
+    
+//     // Este selector le pega al div clásico (.card) Y TAMBIÉN entra a los componentes nuevos (.card *)
+//     .card, ::ng-deep .card {
+//       flex: 0 0 400px; 
+//       scroll-snap-align: center;
+//       background: #fff;
+//       border-radius: 15px;
+//       overflow: hidden;
+//       border: 1px solid #eee;
+//       transition: transform 0.3s ease;
+//       display: flex;
+//       flex-direction: column;
+//       position: relative;
+//       height: 100%; // Asegura que todas midan lo mismo
+  
+//       &:hover { 
+//         transform: scale(1.02); 
+//       }
+  
+//       // Buscamos la imagen, no importa si está suelta o adentro de app-secretaria
+//       img {
+//         width: 100%;
+//         aspect-ratio: 1 / 1;
+//         object-fit: cover;
+//         object-position: top;
+//       }
+  
+//       // Buscamos el contenedor de info
+//       .card-info {
+//         padding: 20px;
+//         text-align: left;
+//         flex-grow: 1;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: space-between;
+      
+//         h3 { 
+//           margin: 0 0 12px 0; 
+//           color: #34495e; 
+//         }
+  
+//         p {
+//           color: #555;
+//           font-size: 0.95rem;
+//           line-height: 1.5;
+//           margin: 0 0 20px 0;
+//         }
+  
+//         /* Lista de opciones (Secretaría y futuras catequesis) */
+//         .card-menu {
+//           list-style: none;
+//           padding: 0;
+//           margin: 0 0 20px 0;
+//           display: flex;
+//           flex-direction: column;
+//           gap: 8px;
+      
+//           li {
+//             font-size: 0.9rem;
+//             color: #555;
+//             cursor: pointer;
+//             padding: 6px 8px;
+//             border-radius: 6px;
+//             display: flex;
+//             align-items: center;
+//             gap: 8px;
+//             transition: all 0.2s ease;
+      
+//             i {
+//               font-size: 0.75rem;
+//               color: #bdc3c7;
+//               transition: transform 0.2s;
+//             }
+      
+//             &:hover {
+//               background-color: #f0f4f8;
+//               color: #2b4c7e;
+              
+//               i {
+//                 color: #4a76a8;
+//                 transform: translateX(3px);
+//               }
+//             }
+//           }
+//         }
+      
+//         /* Botón de WhatsApp impecable para todas las tarjetas */
+//         .btn-whatsapp {
+//           display: inline-flex;
+//           align-items: center;
+//           gap: 8px;
+//           background-color: #25d366;
+//           color: white;
+//           text-decoration: none;
+//           padding: 8px 15px;
+//           border-radius: 5px;
+//           font-weight: bold;
+//           font-size: 0.85rem;
+//           width: fit-content;
+//           margin-top: auto; 
+//         }
+//       }
+//     }
+  
+//     // Ajuste estructural para que Angular entienda que el componente como tal mide 400px en el flexbox
+//     app-secretaria, app-catequesis, app-caritas {
+//       flex: 0 0 400px;
+//       scroll-snap-align: center;
+//       display: flex;
+//       flex-direction: column;
+//     }
+//   }
+  
+//   /* ==========================================================================
+//      ESTILOS DE LAS FLECHAS DEL CARRUSEL
+//      ========================================================================== */
+  
+//   .carousel-wrapper {
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     max-width: 1100px;
+//     margin: 0 auto;
+//     padding: 0 40px; 
+  
+//     .arrow-btn {
+//       position: absolute;
+//       top: 50%;
+//       transform: translateY(-50%);
+//       background: rgba(255, 255, 255, 0.8);
+//       border: 1px solid #eee;
+//       width: 40px;
+//       height: 40px;
+//       border-radius: 50%;
+//       cursor: pointer;
+//       z-index: 10;
+//       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+//       transition: all 0.3s;
+  
+//       &:hover { 
+//         background: #fff; 
+//         transform: translateY(-50%) scale(1.1); 
+//         box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
+//       }
+      
+//       &.left { left: 0; }
+//       &.right { right: 0; }
+  
+//       i { color: #2c3e50; font-size: 1.2rem; }
+//     }
+//   }
+  
+//   /* ==========================================================================
+//      MEDIAS QUERIES (RESPONSIVE)
+//      ========================================================================== */
+  
+//   @media (max-width: 850px) {
+//     .carousel-wrapper {
+//       padding: 0 10px;
+//       .arrow-btn {
+//         width: 35px;
+//         height: 35px;
+//         &.left { left: 5px; }
+//         &.right { right: 5px; }
+//       }
+//     }
+//   }
+  
+//   @media (max-width: 600px) {
+//     .comunidad-grid {
+//       .card, ::ng-deep .card, app-secretaria, app-catequesis {
+//         flex: 0 0 85% !important; 
+//       }
+//     }
+//   }
+  
+//   @media (max-width: 480px) {
+//     .carousel-wrapper { padding: 0; }
+//     .comunidad-grid .cards-container { padding: 10px; }
+//   }
+
+:host ::ng-deep {
+
+
+/* ==========================================================================
+   ESTILOS GENERALES DEL CONTENEDOR (CARRUSEL)
+   ========================================================================== */
+
+   .comunidad-grid {
+    padding: 50px 20px;
+    text-align: center;
+  
+    h2 {
+      color: #34495e;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .cards-container {
+    display: flex; 
+    gap: 25px;
+    overflow-x: auto; 
+    padding: 20px 10px;
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    
+    &::-webkit-scrollbar { display: none; } 
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  
+    &.active {
+      cursor: grabbing;
+      scroll-snap-type: none; 
+    }
+  }
+  
+  // Aseguramos que tanto las divs como los componentes midan lo mismo en el flexbox
+  .card, app-secretaria, app-catequesis, app-caritas {
+    flex: 0 0 400px;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  /* ==========================================================================
+     ESTILOS PLANOS (SIN ANIDAR) - ACCESIBLES PARA TODOS
+     ========================================================================== */
+  
+  :host ::ng-deep {
+  
+    // Estilo plano de la tarjeta
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid #eee;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      height: 100%;
+  
+      &:hover { 
+        transform: scale(1.02); 
+      }
+    }
+  
+    // Estilo plano de la imagen
+    .card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: top;
+    }
+  
+    // Estilo plano del bloque de información
+    .card-info {
+      padding: 20px;
+      text-align: left;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    
+      h3 { 
+        margin: 0 0 12px 0; 
+        color: #34495e; 
+      }
+  
+      p {
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin: 0 0 20px 0;
+      }
+    }
+  
+    // Estilo plano del menú de listas (Secretaría / Catequesis)
+    .card-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .card-menu li {
+      font-size: 0.9rem;
+      color: #555;
+      cursor: pointer;
+      padding: 6px 8px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+  
+    .card-menu li i {
+      font-size: 0.75rem;
+      color: #bdc3c7;
+      transition: transform 0.2s;
+    }
+  
+    .card-menu li:hover {
+      background-color: #f0f4f8;
+      color: #2b4c7e;
+      
+      i {
+        color: #4a76a8;
+        transform: translateX(3px);
+      }
+    }
+  
+    // Estilo plano del botón de WhatsApp
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #25d366;
+      color: white;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 0.85rem;
+      width: fit-content;
+      margin-top: auto; 
+    }
+  
+    // Estilo plano del botón flotante de Cáritas
+    .float-button {
+      position: absolute;
+      bottom: 20px; 
+      right: 20px;
+      background-color: #e74c3c; 
+      color: white;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      z-index: 5;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+  
+      &:hover {
+        transform: scale(1.05);
+        background-color: #c0392b;
+      }
+  
+      .icon { font-size: 1.1rem; }
+      .text { font-size: 0.85rem; font-weight: bold; }
+    }
+  }
+  
+  
+  /* ==========================================================================
+     ESTILOS DE LAS FLECHAS DEL CARRUSEL
+     ========================================================================== */
+  
+  .carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px; 
+  
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #eee;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+  
+      &:hover { 
+        background: #fff; 
+        transform: translateY(-50%) scale(1.1); 
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
+      }
+      
+      &.left { left: 0; }
+      &.right { right: 0; }
+  
+      i { color: #2c3e50; font-size: 1.2rem; }
+    }
+  }
+  
+  
+  /* ==========================================================================
+     ADAPTACIONES RESPONSIVAS (MEDIA QUERIES)
+     ========================================================================== */
+  
+  @media (max-width: 850px) {
+    .carousel-wrapper {
+      padding: 0 10px;
+      .arrow-btn {
+        width: 35px;
+        height: 35px;
+        &.left { left: 5px; }
+        &.right { right: 5px; }
+      }
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .card, app-secretaria, app-catequesis, app-caritas {
+      flex: 0 0 85% !important; 
+    }
+  
+    :host ::ng-deep .float-button {
+      bottom: 20px;
+      padding: 0;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      justify-content: center;
+      .text { display: none; }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .carousel-wrapper { padding: 0; }
+    .cards-container { padding: 10px; }
+  }
+}
+
+//   /* ==========================================================================
+//      ESTILOS PLANOS PARA LOS MODALES DE REQUISITOS (Bautismos, Bodas, etc.)
+//      ========================================================================== */
+// :host ::ng-deep{
+//   // Fondo oscuro que cubre toda la pantalla
+//   .modal-overlay {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100vw;
+//     height: 100vh;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     z-index: 1000;
+//   }
+
+//   // Contenedor blanco del modal
+//   .document-page {
+//     background-color: #ffffff;
+//     width: 90%;
+//     max-width: 600px;
+//     max-height: 85vh;
+//     overflow-y: auto;
+//     border-radius: 12px;
+//     padding: 30px;
+//     position: relative;
+//     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+//     border-top: 8px solid #4a76a8; // Línea azul de cabecera
+//     text-align: left;
+
+//     h2 {
+//       text-align: center;
+//       color: #2b4c7e;
+//       margin-bottom: 10px;
+//       font-size: 1.8rem;
+//     }
+
+//     .subtitle {
+//       text-align: center;
+//       color: #647a95;
+//       font-size: 1rem;
+//       margin-top: 0;
+//       margin-bottom: 30px;
+//       font-weight: 500;
+//     }
+//   }
+
+//   // Botón para cerrar (la X)
+//   .close-btn {
+//     position: absolute;
+//     top: 15px;
+//     right: 15px;
+//     background: none;
+//     border: none;
+//     font-size: 1.2rem;
+//     color: #95a5a6;
+//     cursor: pointer;
+//     transition: color 0.2s;
+
+//     &:hover {
+//       color: #e74c3c;
+//     }
+//   }
+
+//   // Lista de requisitos dentro del modal
+//   .requirements-list {
+//     list-style: none;
+//     padding: 0;
+//     margin: 0 0 30px 0;
+
+//     li {
+//       margin-bottom: 15px;
+//       line-height: 1.6;
+//       color: #333;
+//       display: flex;
+//       align-items: flex-start;
+//       gap: 10px;
+
+//       i {
+//         color: #4a76a8;
+//         margin-top: 5px;
+//         font-size: 0.9rem;
+//       }
+//     }
+//   }
+
+
+// }
+// }

@@ -1,1 +1,33 @@
-<p>catequesis works!</p>
+<div class="card">
+    <img src="assets/iglesia4.jpg" alt="Catequesis">
+    <div class="card-info">
+        <h3>Catequesis</h3>
+        <ul class="card-menu">
+            <li (click)="mostrarCatNinos = true">
+                <i class="fa-solid fa-chevron-right"></i> Catequesis de niños
+            </li>
+            <li (click)="mostrarCatAdol = true">
+                <i class="fa-solid fa-chevron-right"></i> Catequesis de adolescentes
+            </li>
+            <li (click)="mostrarCatJovAdul = true">
+                <i class="fa-solid fa-chevron-right"></i> Catequesis para Jovenes y Catecumenado de Adultos
+            </li>
+            <li (click)="mostrarCatMatrimonios = true">
+                <i class="fa-solid fa-chevron-right"></i> Catequesis para Matrimonios
+            </li>
+            <li (click)="mostrarAlpha = true">
+                <i class="fa-solid fa-chevron-right"></i> Alpha
+            </li>
+        </ul>
+
+        <a href="https://wa.me/3413535467" target="_blank" class="btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Participar
+        </a>
+    </div>
+</div>
+
+<app-cat-nino *ngIf="mostrarCatNinos" (close)="mostrarCatNinos = false"></app-cat-nino>
+<app-cat-adol *ngIf="mostrarCatAdol" (close)="mostrarCatAdol = false"></app-cat-adol>
+<app-cat-jov-adul *ngIf="mostrarCatJovAdul" (close)="mostrarCatJovAdul = false"></app-cat-jov-adul>
+<app-cat-matrimonios *ngIf="mostrarCatMatrimonios" (close)="mostrarCatMatrimonios = false"></app-cat-matrimonios>
+<app-cat-alpha *ngIf="mostrarAlpha" (close)="mostrarAlpha = false"> </app-cat-alpha>

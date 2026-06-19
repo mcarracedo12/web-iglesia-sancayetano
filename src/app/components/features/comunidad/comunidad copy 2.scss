@@ -1,4 +1,4 @@
-/* ==========================================================================
+  /* ==========================================================================
    1. CONTENEDOR PRINCIPAL Y ESTRUCTURA DEL CARRUSEL
    ========================================================================== */
 
@@ -7,7 +7,6 @@
     text-align: center;
   
     h2 {
-      text-align: center;
       color: #34495e;
       margin-bottom: 20px;
     }
@@ -194,7 +193,6 @@
       text-align: left;
   
       h2 {
-        text-align: center;
         color: #2b4c7e;
         margin: 0 0 5px 0;
         font-size: 1.6rem;
@@ -361,49 +359,3 @@
     .carousel-wrapper { padding: 0; }
     .cards-container { padding: 10px; }
   }
-
-
-
-
-  /* ==========================================================================
-   MODIFICACIÓN EXCLUSIVA PARA EL MODAL DE SANTERÍA
-   ========================================================================== */
-
-
-:host ::ng-deep {
-  // Buscamos el info-grid pero SOLO cuando adentro existe la clase de santería
-  .info-grid:has(.santeria-horario) {
-    @media (min-width: 768px) {
-        // width: 60%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center; // ← Esto está intentando centrar horizontalmente si no hay altura fija
-        min-height: 200px;
-      // gap: 50px; // Le da más espacio de separación con la foto
-    }
-
-    .modal-body {
-      @media (min-width: 768px) {
-        width: 60%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center; // ← Esto está intentando centrar horizontalmente si no hay altura fija
-        min-height: 200px;
-        width: 45%; // Achicamos la columna derecha para que el texto no se estire de más
-      }
-
-      p {
-        color: #4a5568;
-        font-size: 1.1rem;
-        line-height: 1.6;
-        margin: 0 0 10px 0;
-        
-        // Alinea los horarios prolijos
-        strong {
-          display: inline-block;
-          min-width: 75px; 
-        }
-      }
-    }
-  }
-}

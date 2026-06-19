@@ -11,7 +11,7 @@ import { Santeria } from './modals/santeria/santeria';
   selector: 'app-secretaria',
   imports: [CommonModule, ReqBautismos, ReqCatequesis, ReqCasamientos, InfoMisas, Santeria],
   templateUrl: './secretaria.html',
-  styleUrl: './../../comunidad.scss'
+  // styleUrl: './../../comunidad.scss'
 })
 export class Secretaria {
   mostrarReqBautismos: boolean = false;
