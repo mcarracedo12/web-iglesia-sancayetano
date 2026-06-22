@@ -3,13 +3,13 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "ignoreDeprecations": "6.0",
     "outDir": "./out-tsc/app",
     "rootDir": "./src",
-    "types": [
-      "node"
-    ]
+    "types": []
   },
+  "files": [
+    "src/main.ts"
+  ],
   "include": [
     "src/**/*.ts"
   ],

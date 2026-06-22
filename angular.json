@@ -42,6 +42,8 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/web-iglesia-sancayetano/",
+              "deployUrl": "/web-iglesia-sancayetano/",
               "budgets": [
                 {
                   "type": "initial",

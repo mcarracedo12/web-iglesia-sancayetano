@@ -14,13 +14,13 @@
     "importHelpers": true,
     "target": "ES2022",
     // "module": "preserve",
-    "moduleResolution": "node",// este deberia ir?
+    "moduleResolution": "bundler",
     "module": "esnext",
     // "target": "es2022",
     "useDefineForClassFields": false,
     // "lib": ["es2023", "dom"], este deberia ir
     // "skipLibCheck": true,
-    "baseUrl": "./",
+    // "baseUrl": "./",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
