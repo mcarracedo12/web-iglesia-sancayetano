@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html lang="en" data-beasties-container>
+
+<head>
+  <meta charset="utf-8">
+  <title>Parroquia San Cayetano - Rosario | Horarios, Misas y Cáritas</title>
+  <base href="/">
+
+  <!-- SEO Técnico y Accesibilidad -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Página oficial de la Parroquia San Cayetano de Rosario. Información sobre horarios de misas, actividades comunitarias, sacramentos y donaciones a Cáritas.">
+  <meta name="keywords" content="Parroquia San Cayetano Rosario, Iglesia San Cayetano, horarios de misa San Cayetano, Cáritas Rosario donaciones, religión, Rosario">
+  <link rel="canonical" href="https://www.sancayetanorosario.org.ar/">
+  <!-- Reemplazar por la URL final -->
+
+  <!-- Open Graph / Vista Previa en Redes Sociales y WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sancayetanorosario.org.ar/"> <!-- Reemplazar por la URL final -->
+  <meta property="og:title" content="Parroquia San Cayetano - Rosario">
+  <meta property="og:description" content="Horarios de misas, actividades de la comunidad y donaciones a Cáritas.">
+  <meta property="og:image" content="https://www.sancayetanorosario.org.ar/assets/images/frente-iglesia.jpg">
+  <!-- Reemplazar por una foto real en producción -->
+
+  <!-- Favicon y Estilos Externos -->
+  <link rel="icon" type="image/jpeg" href="assets/icons/icon_cruz.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="styles-PBULS76B.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-PBULS76B.css"></noscript></head>
+
+
+<body>
+  <app-root></app-root>
+
+  <script>
+    // Esta función espera a que TODO el contenido de la página cargue
+    window.addEventListener('load', () => {
+
+      // Usamos un pequeño intervalo para darle tiempo a Angular de renderizar los componentes
+      setTimeout(() => {
+        const container = document.getElementById('carouselContainer');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+
+        if (container && nextBtn && prevBtn) {
+          nextBtn.addEventListener('click', () => {
+            const scrollAmount = 350;
+            if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 50) {
+              container.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+              container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+          });
+
+          prevBtn.addEventListener('click', () => {
+            const scrollAmount = 350;
+            if (container.scrollLeft <= 5) {
+              container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
+            } else {
+              container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            }
+          });
+
+          console.log("Carrusel de Comunidad listo!");
+        } else {
+          console.warn("No se encontraron los elementos del carrusel todavía.");
+        }
+      }, 500);
+    });
+  </script>
+
+
+<script src="main-JLWN6U3V.js" type="module"></script></body>
+
+</html>
