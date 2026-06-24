@@ -14,7 +14,7 @@
     /* color: white; */
     color: #9e9912e2;
     padding: 0 20px; // Espacio lateral para que el texto no toque los bordes
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 4px 4px 8px rgba(251, 248, 248, 0.7);
 
     h1 {
       font-size: clamp(1.8rem, 5vw, 3rem); // Tamaño flexible: mínimo 1.8rem, máximo 3rem
@@ -23,7 +23,7 @@
     }
 
     p {
-      font-size: clamp(1rem, 3vw, 1.2rem);
+      font-size: clamp(1.3rem, 3vw, 1.2rem);
     }
   }
 
