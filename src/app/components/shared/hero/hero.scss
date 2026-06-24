@@ -1,6 +1,7 @@
 .hero {
   position: relative;
-  height: 60vh; // Altura en PC
+  /*height: 60vh; // Altura en PC */
+  height: 25vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,12 +11,14 @@
     position: absolute;
     z-index: 2;
     text-align: center;
-    color: white;
+    /* color: white; */
+    color: #9e9912e2;
     padding: 0 20px; // Espacio lateral para que el texto no toque los bordes
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 
     h1 {
       font-size: clamp(1.8rem, 5vw, 3rem); // Tamaño flexible: mínimo 1.8rem, máximo 3rem
+      /*font-size: clamp(2.8rem, 10vw, 6rem);*/
       margin-bottom: 10px;
     }
 
