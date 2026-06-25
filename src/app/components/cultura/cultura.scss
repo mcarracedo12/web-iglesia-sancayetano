@@ -1,3 +1,8 @@
+$primario: #fdfcf8;
+$acento: #3498db;
+/*$fondo: #f9f9f9;*/
+$fondo: #743608d4;
+
 .info-cultura {
     display: flex;
     justify-content: center;
@@ -7,7 +12,7 @@
   
     .info-card {
       width: 300px;
-      /*background: white;*/
+      background: $fondo;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 10px 20px rgba(0,0,0,0.05);
@@ -26,7 +31,7 @@
   
       h3 {
         padding: 20px 10px 10px;
-        color: #5d4037; // Marrón cálido
+        color: $primario; 
         font-family: 'Playfair Display', serif; // Si podés, cargá esta fuente de Google
       }
   

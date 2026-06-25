@@ -2,13 +2,18 @@
    1. CONTENEDOR PRINCIPAL Y ESTRUCTURA DEL CARRUSEL
    ========================================================================== */
 
+$primario: #fdfcf8;
+$acento: #3498db;
+/*$fondo: #f9f9f9;*/
+$fondo: #743608d4;
+
    .comunidad-grid {
     padding: 50px 20px;
     text-align: center;
   
     h2 {
       text-align: center;
-      color: #34495e;
+      color: $primario;
       margin-bottom: 20px;
     }
   }
@@ -50,10 +55,10 @@
   
     /* --- DISEÑO DE LAS TARJETA BASE --- */
     .card {
-      background: #fff;
+      background: $fondo;
       border-radius: 15px;
       overflow: hidden;
-      border: 1px solid #eee;
+      /*border: 1px solid #f7a642;*/
       transition: transform 0.3s ease;
       display: flex;
       flex-direction: column;
@@ -82,11 +87,11 @@
     
       h3 { 
         margin: 0 0 12px 0; 
-        color: #34495e; 
+        color: $primario; 
       }
   
       p {
-        color: #555;
+        color: $primario;
         font-size: 0.95rem;
         line-height: 1.5;
         margin: 0 0 20px 0;
@@ -105,7 +110,7 @@
   
     .card-menu li {
       font-size: 0.9rem;
-      color: #555;
+      color: $primario;
       cursor: pointer;
       padding: 6px 8px;
       border-radius: 6px;
@@ -117,16 +122,16 @@
   
     .card-menu li i {
       font-size: 0.75rem;
-      color: #bdc3c7;
+      color: $primario;
       transition: transform 0.2s;
     }
   
     .card-menu li:hover {
-      background-color: #f0f4f8;
-      color: #2b4c7e;
+      background-color: rgba(245, 214, 141, 0.477);
+      color: $primario;
       
       i {
-        color: #4a76a8;
+        color: $primario;
         transform: translateX(3px);
       }
     }
@@ -162,7 +167,7 @@
     }
   
     .document-page {
-      background-color: #ffffff;
+      background-color: rgba(246, 197, 82, 0.978);
       width: 90%;
       max-width: 800px;
       max-height: 90vh;
@@ -216,6 +221,7 @@
       grid-template-columns: 1fr 1.5fr;
       gap: 25px;
       align-items: start;
+      background: rgba(246, 197, 82, 0.978);
   
       @media (max-width: 650px) {
         grid-template-columns: 1fr;
