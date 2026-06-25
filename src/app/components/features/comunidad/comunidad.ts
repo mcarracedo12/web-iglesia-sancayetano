@@ -3,15 +3,10 @@ import { CommonModule } from '@angular/common';
 import { Secretaria } from './sections/secretaria/secretaria';
 import { Catequesis } from './sections/catequesis/catequesis';
 
-import { CatNino } from './sections/catequesis/modals/cat-nino/cat-nino';
-import { CatAdol } from './sections/catequesis/modals/cat-adol/cat-adol';
-import { CatJovAdul } from './sections/catequesis/modals/cat-jov-adul/cat-jov-adul';
-import { CatMatrimonios } from './sections/catequesis/modals/cat-matrimonios/cat-matrimonios';
-import { CatAlpha } from './sections/catequesis/modals/cat-alpha/cat-alpha';
 
 @Component({
   selector: 'app-comunidad',
-  imports: [CommonModule, Secretaria, Catequesis, CatNino, CatAdol, CatJovAdul, CatMatrimonios, CatAlpha],
+  imports: [CommonModule, Secretaria, Catequesis],
   templateUrl: './comunidad.html',
   styleUrl: './comunidad.scss'
 })
