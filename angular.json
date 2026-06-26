@@ -21,6 +21,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "baseHref": "/web-iglesia-sancayetano/",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -43,7 +44,6 @@
           "configurations": {
             "production": {
               "baseHref": "/web-iglesia-sancayetano/",
-              "deployUrl": "/web-iglesia-sancayetano/",
               "budgets": [
                 {
                   "type": "initial",

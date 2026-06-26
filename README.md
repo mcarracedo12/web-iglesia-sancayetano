@@ -102,6 +102,7 @@ npx ng build --configuration production --base-href "/web-iglesia-sancayetano/"
 
 ```bash
 npx angular-cli-ghpages --dir=dist/web-iglesia/browser
+npx angular-cli-ghpages --dir=dist/web-iglesia-sancayetano/browser
 ```
 
 ## Additional Resources
