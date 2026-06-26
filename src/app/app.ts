@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Nav } from './components/shared/nav/nav'
 import { Hero } from './components/shared/hero/hero';
 import { Donaciones } from './components/shared/donaciones/donaciones';
-import { Comunidad } from './components/features/comunidad/comunidad';
+import { Comunidad } from './components/comunidad/comunidad';
 import { Redes } from './components/redes/redes';
 import { Cultura } from './components/cultura/cultura'
 import { Oraciones } from './components/oraciones/oraciones';

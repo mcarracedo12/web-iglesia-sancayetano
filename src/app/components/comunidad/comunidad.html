@@ -1,0 +1,22 @@
+<section id="comunidad" class="comunidad-grid">
+
+  <div class="carousel-wrapper">
+    <!-- Flecha Izquierda -->
+    <button class="arrow-btn left" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+
+    <div class="cards-container" id="carouselContainer" #carouselContainer [class.active]="isDown"
+      (mousedown)="onMouseDown($event)" (mouseleave)="onMouseLeave()" (mouseup)="onMouseUp()"
+      (mousemove)="onMouseMove($event)">
+
+      <app-secretaria></app-secretaria>
+      <app-catequesis></app-catequesis>
+      <app-caritas></app-caritas>
+      <app-liturgia></app-liturgia>
+      <app-actividad-social></app-actividad-social>
+
+    
+
+    </div>
+    <button class="arrow-btn right" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+</section>

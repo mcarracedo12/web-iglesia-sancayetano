@@ -1,0 +1,31 @@
+<div class="card">
+    <img src="assets/images/comunidad/caritas/comunidad-caritas.webp" alt="Caritas">
+    <div class="card-info">
+        <h3>Cáritas</h3>
+        <p>Manos en obra apoyando a la comunidad.</p>
+        <ul class="card-menu">
+            <li (click)="mostrarRopa = true">
+                <i class="fa-solid fa-chevron-right"></i> Recepción, clasificación y distribución de ropa
+            </li>
+            <li (click)="mostrarAlimentos = true">
+                <i class="fa-solid fa-chevron-right"></i> Recepción, clasificación y distribución de alimentos  
+            </li>
+            <li (click)="mostrarApoyo = true">
+                <i class="fa-solid fa-chevron-right"></i> Apoyamos a los chicos en situación de vulnerabilidad en su aprendizaje
+            </li>
+            <li (click)="mostrarBecas = true">
+                <i class="fa-solid fa-chevron-right"></i>Becas para alumnos de escuelas secundarias en situación de vulnerabilidad
+            </li>
+            <li (click)="mostrarTiempos = true">
+                <i class="fa-solid fa-chevron-right"></i> Tiempos compartidos: acompañamiento a personas mayores y enfermas 
+            </li>
+        </ul>
+       
+        <app-whatsapp></app-whatsapp>
+    </div>
+</div>
+<app-ropa *ngIf="mostrarRopa" (close)="mostrarRopa = false"></app-ropa>
+<app-alimentos *ngIf="mostrarAlimentos" (close)="mostrarAlimentos = false"></app-alimentos>
+<app-apoyo-escolar *ngIf="mostrarApoyo" (close)="mostrarApoyo = false"></app-apoyo-escolar>
+<app-becas *ngIf="mostrarBecas" (close)="mostrarBecas = false"></app-becas>
+<app-tiempos-compartidos *ngIf="mostrarTiempos" (close)="mostrarTiempos = false"></app-tiempos-compartidos> 
