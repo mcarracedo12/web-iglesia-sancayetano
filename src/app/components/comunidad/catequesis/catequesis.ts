@@ -5,10 +5,11 @@ import { CatAlpha } from './cat-alpha/cat-alpha';
 import { CatJovAdul } from './cat-jov-adul/cat-jov-adul';
 import { CatMatrimonios } from './cat-matrimonios/cat-matrimonios';
 import { CatNino } from './cat-nino/cat-nino';
+import { Whatsapp } from "../../shared/whatsapp/whatsapp";
 
 @Component({
   selector: 'app-catequesis',
-  imports: [ CommonModule, CatAdol, CatAlpha, CatJovAdul, CatMatrimonios, CatNino],
+  imports: [CommonModule, CatAdol, CatAlpha, CatJovAdul, CatMatrimonios, CatNino, Whatsapp],
   templateUrl: './catequesis.html',
   //styleUrl: './../../comunidad.scss',
 })

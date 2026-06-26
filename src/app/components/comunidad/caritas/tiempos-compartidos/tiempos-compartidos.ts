@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-tiempos-compartidos',
@@ -6,4 +6,14 @@ import { Component } from '@angular/core';
   templateUrl: './tiempos-compartidos.html',
   //styleUrl: './tiempos-compartidos.scss',
 })
-export class TiemposCompartidos {}
+export class TiemposCompartidos {
+   @Output()close = new EventEmitter<void>();
+  cerrar(){
+    this.close.emit();
+  }
+  @HostListener('document:keydown.escape')
+  manejarEsc() {
+    this.cerrar();
+  }
+
+}

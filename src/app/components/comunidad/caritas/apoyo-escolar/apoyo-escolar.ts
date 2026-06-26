@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-apoyo-escolar',
@@ -6,4 +6,13 @@ import { Component } from '@angular/core';
   templateUrl: './apoyo-escolar.html',
   styleUrl: './apoyo-escolar.scss',
 })
-export class ApoyoEscolar {}
+export class ApoyoEscolar {
+   @Output()close = new EventEmitter<void>();
+  cerrar(){
+    this.close.emit();
+  }
+  @HostListener('document:keydown.escape')
+  manejarEsc() {
+    this.cerrar();
+  }
+}
