@@ -86,7 +86,9 @@ $fondo: #743608d4;
       flex-direction: column;
       justify-content: space-between;
     
-      h3 { 
+      h3 {
+        text-align: center;
+        font-size: 1.3rem; 
         margin: 0 0 12px 0; 
         color: $primario; 
       }
