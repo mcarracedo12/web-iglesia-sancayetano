@@ -1,1 +1,19 @@
-<p>actividad-social works!</p>
+<div class="card">
+    <img src="assets/images/comunidad/comunidad-actividad-social.jpg" alt="Actividad Social">
+    <div class="card-info">
+        <h3>Actividad Social</h3>
+        <p>Manos en obra apoyando a la comunidad.</p>
+        <ul class="card-menu">
+            <li (click)="mostrarAlcoholicos = true">
+                <i class="fa-solid fa-chevron-right"></i> Apoyo a personas en situación de alcoholismo
+            </li>
+            <li (click)="mostrarNarcoticos = true">
+                <i class="fa-solid fa-chevron-right"></i> Apoyo a personas en situación de adicción a narcóticos
+            </li>
+        </ul>
+       
+        <app-whatsapp></app-whatsapp>
+    </div>
+</div>
+<app-alcoholicos *ngIf="mostrarAlcoholicos" (close)="mostrarAlcoholicos=false"></app-alcoholicos>
+<app-narcoticos *ngIf="mostrarNarcoticos" (close)="mostrarNarcoticos=false"></app-narcoticos>

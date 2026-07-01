@@ -1,1 +1,24 @@
-<p>san-pio-pietralcina works!</p>
+<div class="modal-overlay" (click)="cerrar()">
+    <div class="document-page" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="cerrar()">&times;</button>
+
+        <div class="content">
+            <h2>San Pio Pietralcina</h2>
+
+            <div class="info-grid">
+                <div class="modal-media">
+                    <img src="assets/images/comunidad/liturgia/catequesis.jpg" alt="San Pio Pietralcina">
+                </div>
+
+                <div class="modal-body">
+
+                    <h4>San Pio Pietralcina</h4>
+                    <ul>
+                        <li>23 de Septiembre</li>
+                        <li>...</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>

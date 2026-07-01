@@ -1,1 +1,24 @@
-<p>mensual7 works!</p>
+<div class="modal-overlay" (click)="cerrar()">
+    <div class="document-page" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="cerrar()">&times;</button>
+
+        <div class="content">
+            <h2>7 de cada mes</h2>
+
+            <div class="info-grid">
+                <div class="modal-media">
+                    <img src="assets/images/comunidad/liturgia/catequesis.jpg" alt="7 de cada mes">
+                </div>
+
+                <div class="modal-body">
+
+                    <h4>Los 7 de cada mes</h4>
+                    <ul>
+                        <li>Conmemoración mensual de San Cayetano</li>
+                        
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>

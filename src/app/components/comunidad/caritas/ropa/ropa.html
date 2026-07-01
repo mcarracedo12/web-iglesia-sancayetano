@@ -1,1 +1,25 @@
-<p>ropa works!</p>
+<div class="modal-overlay" (click)="cerrar()">
+  <div class="document-page" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="cerrar()">&times;</button>
+
+    <div class="content">
+      <h2>Ropa</h2>
+
+      <div class="info-grid">
+        <div class="modal-media">
+          <img src="assets/images/comunidad/caritas/comunidad-caritas-ropa.webp" alt="Ropa">
+        </div>
+
+        <div class="modal-body">
+
+          <h4>Recibimiento de ropa en buenas condiciones de uso</h4>
+           <ul>
+            <li>Recibimos ropa en buenas condiciones de uso para clasificar y donar a personas en situación de vulnerabilidad</li>
+          </ul>
+        
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

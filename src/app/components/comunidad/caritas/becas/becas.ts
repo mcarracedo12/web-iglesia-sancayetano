@@ -4,7 +4,6 @@ import { Component, EventEmitter, Output, HostListener } from '@angular/core';
   selector: 'app-becas',
   imports: [],
   templateUrl: './becas.html',
-  styleUrl: './becas.scss',
 })
 export class Becas {
    @Output()close = new EventEmitter<void>();

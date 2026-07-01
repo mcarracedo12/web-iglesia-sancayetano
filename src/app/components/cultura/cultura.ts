@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HistoriaModal } from '../historia-modal/historia-modal';
 import { BiografiaModal } from '../biografia-modal/biografia-modal';
@@ -20,6 +20,15 @@ export class Cultura {
 
   abrirBio() {
     this.mostrarBiografia = true;
+  }
+
+  isModalOpen = false;
+
+  @HostListener('window:keydown.escape')
+  handleEscapeKey() {
+    if (this.isModalOpen) {
+      this.isModalOpen = false;
+    }
   }
 
 }

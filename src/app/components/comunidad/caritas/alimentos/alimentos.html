@@ -1,1 +1,25 @@
-<p>alimentos works!</p>
+<div class="modal-overlay" (click)="cerrar()">
+  <div class="document-page" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="cerrar()">&times;</button>
+
+    <div class="content">
+      <h2>Alimentos</h2>
+
+      <div class="info-grid">
+        <div class="modal-media">
+          <img src="assets/images/comunidad/caritas/comunidad-caritas-alimentos.webp" alt="Alimentos">
+        </div>
+
+        <div class="modal-body">
+
+          <h4>Recibimiento de alimentos de 6:30 a 12 y de 16 a 20</h4>
+           <ul>
+            <li>Recibimos alimentos no perecederos para donar a personas en situación de vulnerabilidad</li>
+          </ul>
+        
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

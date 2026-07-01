@@ -4,7 +4,6 @@ import { Component, EventEmitter, Output, HostListener } from '@angular/core';
   selector: 'app-tiempos-compartidos',
   imports: [],
   templateUrl: './tiempos-compartidos.html',
-  //styleUrl: './tiempos-compartidos.scss',
 })
 export class TiemposCompartidos {
    @Output()close = new EventEmitter<void>();

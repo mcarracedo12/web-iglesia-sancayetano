@@ -1,9 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Component({
   selector: 'app-san-pio-pietralcina',
   imports: [],
   templateUrl: './san-pio-pietralcina.html',
-  styleUrl: './san-pio-pietralcina.scss',
 })
-export class SanPioPietralcina {}
+export class SanPioPietralcina {
+   @Output()close = new EventEmitter<void>();
+
+  cerrar(){this.close.emit();
+   } 
+   @HostListener('document:keydown.escape')
+  manejarEsc() {
+    this.cerrar();
+  }
+}

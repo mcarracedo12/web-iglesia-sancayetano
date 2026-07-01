@@ -1,1 +1,25 @@
-<p>apoyo-escolar works!</p>
+<div class="modal-overlay" (click)="cerrar()">
+  <div class="document-page" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="cerrar()">&times;</button>
+
+    <div class="content">
+      <h2>Apoyo Escolar</h2>
+
+      <div class="info-grid">
+        <div class="modal-media">
+          <img src="assets/images/comunidad/caritas/comunidad-caritas-apoyo-escolar.webp" alt="Apoyo Escolar">
+        </div>
+
+        <div class="modal-body">
+
+          <h4>Apoyo Escolar</h4>
+           <ul>
+            <li>...Ver con Marcelo...</li>
+          </ul>
+        
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

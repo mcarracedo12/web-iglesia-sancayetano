@@ -1,1 +1,24 @@
-<p>san-expedito works!</p>
+<div class="modal-overlay" (click)="cerrar()">
+    <div class="document-page" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="cerrar()">&times;</button>
+
+        <div class="content">
+            <h2>San Expedito</h2>
+
+            <div class="info-grid">
+                <div class="modal-media">
+                    <img src="assets/images/comunidad/liturgia/catequesis.jpg" alt="San Expedito">
+                </div>
+
+                <div class="modal-body">
+
+                    <h4>San Expedito</h4>
+                    <ul>
+                        <li>19 de Abril</li>
+                        <li>...</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>

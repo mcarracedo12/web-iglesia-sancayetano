@@ -1,1 +1,39 @@
-<p>liturgia works!</p>
+<div class="card">
+    <img src="assets/images/comunidad/comunidad-liturgia.jpg" alt="Liturgia">
+    <div class="card-info">
+        <h3>Liturgia</h3>
+        <p>Participación en los sacramentos y celebraciones religiosas.</p>
+        <ul class="card-menu">
+            <li (click)="mostrarSanExpedito = true">
+                <i class="fa-solid fa-chevron-right"></i> San Expedito
+            </li>
+            <li (click)="mostrarSanPioPietralcina = true">
+                <i class="fa-solid fa-chevron-right"></i> San Pio Pietralcina
+            </li>
+            <li (click)="mostrarPatronal = true">
+                <i class="fa-solid fa-chevron-right"></i> Patronal San Cayetano
+            </li>
+            <li (click)="mostrarMensual7 = true">
+                <i class="fa-solid fa-chevron-right"></i> 7 de cada mes
+            </li>
+            <li (click)="mostrarMensual19 = true">
+                <i class="fa-solid fa-chevron-right"></i> 19 de cada mes
+            </li>
+            <li (click)="mostrarMensual23 = true">
+                <i class="fa-solid fa-chevron-right"></i> 23 de cada mes
+            </li>
+            <li (click)="mostrarMensual25 = true">
+                <i class="fa-solid fa-chevron-right"></i> 25 de cada mes
+            </li>
+        </ul>
+       
+        <app-whatsapp></app-whatsapp>
+    </div>
+</div>
+<app-san-expedito *ngIf="mostrarSanExpedito" (close)="mostrarSanExpedito=false"></app-san-expedito>
+<app-san-pio-pietralcina *ngIf="mostrarSanPioPietralcina" (close)="mostrarSanPioPietralcina=false"></app-san-pio-pietralcina>
+<app-patronal *ngIf="mostrarPatronal" (close)="mostrarPatronal=false"></app-patronal>
+<app-mensual7 *ngIf="mostrarMensual7" (close)="mostrarMensual7=false"></app-mensual7>
+<app-mensual19 *ngIf="mostrarMensual19" (close)="mostrarMensual19=false"></app-mensual19>
+<app-mensual23 *ngIf="mostrarMensual23" (close)="mostrarMensual23=false"></app-mensual23>
+<app-mensual25 *ngIf="mostrarMensual25" (close)="mostrarMensual25=false"></app-mensual25>

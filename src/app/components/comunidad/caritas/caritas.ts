@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Ropa } from './ropa/ropa';
 import { Alimentos } from "./alimentos/alimentos"; 
@@ -12,7 +12,6 @@ import { Whatsapp } from "../../shared/whatsapp/whatsapp";
   selector: 'app-caritas',
   imports: [CommonModule, Ropa, Whatsapp, Alimentos, ApoyoEscolar, Becas, TiemposCompartidos, ApoyoEscolar],
   templateUrl: './caritas.html',
-  //styleUrl: './caritas.scss',
 })
 export class Caritas {
   mostrarRopa: boolean = false;
@@ -36,4 +35,5 @@ export class Caritas {
   abrirTiempos() {
     this.mostrarTiempos = true;
   }
+
 }

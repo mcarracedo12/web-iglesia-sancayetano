@@ -1,1 +1,25 @@
-<p>becas works!</p>
+<div class="modal-overlay" (click)="cerrar()">
+  <div class="document-page" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="cerrar()">&times;</button>
+
+    <div class="content">
+      <h2>Becas</h2>
+
+      <div class="info-grid">
+        <div class="modal-media">
+          <img src="assets/images/comunidad/caritas/comunidad-caritas-becas.webp" alt="Becas">
+        </div>
+
+        <div class="modal-body">
+
+          <h4>Becas</h4>
+           <ul>
+            <li>...Ver con Marcelo...</li>
+          </ul>
+        
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,7 +4,6 @@ import { Component, EventEmitter, Output, HostListener } from '@angular/core';
   selector: 'app-apoyo-escolar',
   imports: [],
   templateUrl: './apoyo-escolar.html',
-  styleUrl: './apoyo-escolar.scss',
 })
 export class ApoyoEscolar {
    @Output()close = new EventEmitter<void>();

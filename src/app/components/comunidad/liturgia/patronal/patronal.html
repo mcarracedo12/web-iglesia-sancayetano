@@ -1,1 +1,24 @@
-<p>patronal works!</p>
+<div class="modal-overlay" (click)="cerrar()">
+    <div class="document-page" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="cerrar()">&times;</button>
+
+        <div class="content">
+            <h2>Patronal</h2>
+
+            <div class="info-grid">
+                <div class="modal-media">
+                    <img src="assets/images/comunidad/liturgia/catequesis.jpg" alt="Patronal">
+                </div>
+
+                <div class="modal-body">
+
+                    <h4>Patronal</h4>
+                    <ul>
+                        <li>7 de Agosto</li>
+                        <li>...</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>

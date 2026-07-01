@@ -117,13 +117,13 @@ src/app/
     │   ├── navbar/
     │   ├── footer/
     │   └── donaciones/
-    └── features/               
+    └── /               
         ├── comunidad/ 
         │   ├── comunidad.component.ts / .html / .scss
-        │   └── sections/
+        │   └── /
         │       ├── secretaria/
         │       │   ├── secretaria.secretaria.ts / .html / .scss
-        │       │   └── modals/            
+        │       │   └── /            
         │       │       ├── req-bautismos/
         │       │       │   └── req-bautismos.req-bautismos.ts / .html 
         │       │       ├── req-catequesis/
@@ -136,7 +136,7 @@ src/app/
         │       │           └── santeria.santeria.ts / .html  
         │       ├── catequesis/
         │       │   ├── catequesis.catequesis.ts / .html / .scss
-        │       │   └── modales/            
+        │       │   └── /            
         │       │       ├── cat-nino/
         │       │       │   └── cat-nino.cat-nino.ts / .html
         │       │       ├── cat-adol/
@@ -149,7 +149,7 @@ src/app/
         │       │           └── cat-alpha.cat-alpha.ts / .html 
         │       ├── caritas/  
         │       │   ├── caritas.caritas.ts / .html / .scss
-        │       │   └── modales/            
+        │       │   └── /            
         │       │       ├── ????/
         ├── historia/
         └── contacto/
