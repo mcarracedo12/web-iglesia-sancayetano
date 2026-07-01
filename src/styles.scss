@@ -3,7 +3,7 @@ body {
   padding: 0;
   min-height: 100vh;
   position: relative;
-  background-color: #000; // Un fondo negro base para que la foto no flote en la nada
+  background-color: #f4ede4;
 
   &::before {
     content: '';
@@ -19,7 +19,7 @@ body {
     
     // Aquí controlás la transparencia de la foto (0 = invisible, 1 = total)
     opacity: 0.7; // ← Probar entre 0.5 y 0.7 
-    filter: grayscale(0.5); // ← Entre 0.4 y 0.7 para desaturarla
+    filter: grayscale(0.4); // ← Entre 0.4 y 0.7 para desaturarla
     z-index: -1; 
   }
 }
