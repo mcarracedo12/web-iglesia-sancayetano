@@ -11,7 +11,7 @@ import { Oraciones } from './components/oraciones/oraciones';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, Nav, Comunidad, Hero, Donaciones, Redes, Cultura, Oraciones],
+  imports: [CommonModule, Nav, Comunidad, Hero, Donaciones, Redes, Cultura],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
