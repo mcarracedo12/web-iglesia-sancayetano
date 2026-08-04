@@ -6,12 +6,13 @@ import { Donaciones } from './components/shared/donaciones/donaciones';
 import { Comunidad } from './components/comunidad/comunidad';
 import { Redes } from './components/redes/redes';
 import { Cultura } from './components/cultura/cultura'
-import { Oraciones } from './components/oraciones/oraciones';
+import { ContactoDesarrollador } from './components/contacto-desarrollador/contacto-desarrollador';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, Nav, Comunidad, Hero, Donaciones, Redes, Cultura],
+  imports: [CommonModule, Nav, Comunidad, Hero, Donaciones, Redes, Cultura, ContactoDesarrollador],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -39,4 +40,11 @@ export class App implements OnInit, OnDestroy{
       this.audio.pause();
     }
   }
+
+  abrirModal(){
+    console.log("abrir modal");
+  }
+
+
+
 }

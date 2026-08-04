@@ -2,12 +2,12 @@
   <app-nav></app-nav>
   <app-hero></app-hero>
   <app-comunidad></app-comunidad>
- 
+
   <app-cultura></app-cultura>
-  
+
   <button class="audio-toggle" (click)="toggleMusica()" [class.playing]="sonando">
     <i class="fa-solid" [ngClass]="sonando ? 'fa-volume-xmark' : 'fa-music'"></i>
-  </button>  
+  </button>
 
   <!-- <app-oraciones></app-oraciones> -->
   <app-redes></app-redes>
@@ -22,10 +22,10 @@
   <div class="footer-content">
     <div class="footer-info">
       <h3>Parroquia San Cayetano</h3>
-      
+
       <a href="https://maps.app.goo.gl/nY9sowgC8uvvB9Dp8" target="_blank" class="footer-link">
         <i class="fa-solid fa-location-dot"></i>
-        Buenos Aires 2158, Rosario 
+        Buenos Aires 2158, Rosario
       </a>
 
       <a href="mailto:sancayetano.ros@gmail.com" class="footer-link">
@@ -40,8 +40,19 @@
       <p>Lunes a Viernes: 16:00 a 19:00 hs</p>
     </div>
   </div>
-  
+
   <div class="footer-bottom">
     <p>&copy; 2026 Parroquia San Cayetano - Rosario</p>
   </div>
+<!-- 
+  <div class="developer-credit">
+    <span>Diseño y Desarrollo Web — </span>
+    <button class="dev-link" (click)="abrirModal()">Contacto Desarrollador</button>
+  </div>
+
+  <div class="dev-credit-container">
+  <span>Desarrollo Web — </span>
+  <button type="button" class="dev-link" (click)="abrirModal()">Contacto Técnico</button>
+</div> -->
+  <app-contacto-desarrollador></app-contacto-desarrollador>
 </footer>

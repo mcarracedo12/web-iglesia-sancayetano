@@ -1,0 +1,164 @@
+$fondo-modal: #f7f2e8;
+$texto-oscuro: #2b1404;      // Marrón muy oscuro 
+$texto-secundario: #4a2d18; // Para subtítulos
+$border-input: #8c735d;     // Borde visible
+$accent-btn: #6e3306;       // Botón de acción
+
+.dev-credit-container {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #fdfcf8;
+  padding: 15px 0;
+
+  .dev-link {
+    background: none;
+    border: none;
+    color: $texto-oscuro;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85rem;
+    padding: 0;
+
+    &:hover {
+      color: #ffd1a9;
+    }
+  }
+}
+
+// Overlay que ocupa toda la pantalla (sin importar el scroll)
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; // Asegura estar arriba de todo
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+// Tarjeta del modal
+.dev-modal {
+  background-color: $fondo-modal;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 10px;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+
+  // Botón de cerrar alineado a la DERECHA
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px; // Esquina superior derecha
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $texto-oscuro;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 5px;
+
+    &:hover {
+      color: #c0392b;
+    }
+  }
+
+  .content {
+    h2 {
+      color: $texto-oscuro;
+      font-size: 1.4rem;
+      margin: 0 0 8px 0;
+      padding-right: 30px; // Espacio para que el título no pise la 'X' de la derecha
+    }
+
+    .subtitle {
+      color: $texto-secundario;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+  }
+}
+
+// Formulario de alto contraste
+.dev-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+
+    label {
+      font-size: 0.95rem;
+      font-weight: 700; // Letra bien legible
+      color: $texto-oscuro;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1.5px solid $border-input;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      color: #111; // Texto tipeado en negro puro
+      background-color: #fff;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: #666; // Placeholder con buen contraste
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $accent-btn;
+        box-shadow: 0 0 0 3px rgba(110, 51, 6, 0.25);
+      }
+    }
+  }
+
+  .btn-submit {
+    background-color: $accent-btn;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1.05rem;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: background-color 0.2s;
+
+    &:hover:not(:disabled) {
+      filter: brightness(1.15);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  .status-msg {
+    font-size: 0.95rem;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+
+    &.success { color: #1e7e34; }
+    &.error { color: #bd2130; }
+  }
+}
