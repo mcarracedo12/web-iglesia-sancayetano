@@ -7,6 +7,7 @@ import { Comunidad } from './components/comunidad/comunidad';
 import { Redes } from './components/redes/redes';
 import { Cultura } from './components/cultura/cultura'
 import { ContactoDesarrollador } from './components/contacto-desarrollador/contacto-desarrollador';
+import { Title, Meta } from '@angular/platform-browser';
 
 
 @Component({
@@ -17,6 +18,8 @@ import { ContactoDesarrollador } from './components/contacto-desarrollador/conta
   styleUrl: './app.scss'
 })
 export class App implements OnInit, OnDestroy{
+  constructor(private titleService: Title, private metaService: Meta) {}
+
   protected readonly title = signal('web-iglesia');
   audio!: HTMLAudioElement;
   sonando: boolean = false;
@@ -24,6 +27,14 @@ export class App implements OnInit, OnDestroy{
     this.audio = new Audio('assets/himno-san-cayetano.mp3');
     this.audio.loop = true; 
     this.audio.volume = 0.4; 
+
+    this.titleService.setTitle('Parroquia San Cayetano - Rosario');
+    
+    this.metaService.addTags([
+      { name: 'description', content: 'Sitio oficial de la Parroquia San Cayetano en Rosario. Buenos Aires 2158.' },
+      { name: 'author', content: 'Parroquia San Cayetano' }
+    ]);
+  
   }
   toggleMusica() {
     if (this.sonando) {

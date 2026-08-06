@@ -2,7 +2,9 @@
 
   <div class="carousel-wrapper">
     <!-- Flecha Izquierda -->
-    <button class="arrow-btn left" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="arrow-btn left" id="prevBtn" (click)="scrollPrev()">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
 
     <div class="cards-container" id="carouselContainer" #carouselContainer [class.active]="isDown"
       (mousedown)="onMouseDown($event)" (mouseleave)="onMouseLeave()" (mouseup)="onMouseUp()"
@@ -13,9 +15,12 @@
       <app-caritas></app-caritas>
       <app-actividad-social></app-actividad-social>
       <app-liturgia></app-liturgia>
-    
 
     </div>
-    <button class="arrow-btn right" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+
+    <!-- Flecha Derecha -->
+    <button class="arrow-btn right" id="nextBtn" (click)="scrollNext()">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
   </div>
 </section>

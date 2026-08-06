@@ -6,9 +6,9 @@ import { Caritas } from './caritas/caritas';
 import { Liturgia } from './liturgia/liturgia';
 import { ActividadSocial } from './actividad-social/actividad-social';
 
-
 @Component({
   selector: 'app-comunidad',
+  standalone: true, // Aseguramos standalone
   imports: [CommonModule, Secretaria, Catequesis, Caritas, Liturgia, ActividadSocial],
   templateUrl: './comunidad.html',
   styleUrl: './comunidad.scss'
@@ -16,13 +16,44 @@ import { ActividadSocial } from './actividad-social/actividad-social';
 export class Comunidad {
 
   // Obtenemos la referencia local del contenedor de las tarjetas
-  @ViewChild('carouselContainer') carouselContainer!: ElementRef;
+  @ViewChild('carouselContainer') carouselContainer!: ElementRef<HTMLDivElement>;
 
   // Variables para controlar el estado del arrastre
   isDown = false;
   startX = 0;
   scrollLeft = 0;
 
+  // --- NAVEGACIÓN CON FLECHAS ---
+  scrollNext() {
+    if (!this.carouselContainer) return;
+    const container = this.carouselContainer.nativeElement;
+    container.style.scrollBehavior = 'smooth';
+    const scrollAmount = 350;
+
+    // Loop al inicio si llega al final
+    if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 50) {
+      container.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  }
+
+  scrollPrev() {
+    if (!this.carouselContainer) return;
+    const container = this.carouselContainer.nativeElement;
+    container.style.scrollBehavior = 'smooth';
+    const scrollAmount = 350;
+
+    // Si está al principio, va al final
+    if (container.scrollLeft <= 5) {
+      container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    }
+  }
+
+  // --- EVENTOS DE ARRASTRE (DRAG TO SCROLL) ---
+  
   // 1. Cuando el usuario hace clic y mantiene presionado
   onMouseDown(e: MouseEvent) {
     this.isDown = true;
@@ -45,7 +76,9 @@ export class Comunidad {
   onMouseUp() {
     this.isDown = false;
     // Devolvemos el scroll suave para cuando se usen las flechas
-    this.carouselContainer.nativeElement.style.scrollBehavior = 'smooth';
+    if (this.carouselContainer) {
+      this.carouselContainer.nativeElement.style.scrollBehavior = 'smooth';
+    }
   }
 
   // 4. Mientras el mouse se mueve manteniendo el clic presionado
