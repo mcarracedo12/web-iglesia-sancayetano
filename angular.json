@@ -43,7 +43,6 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/web-iglesia-sancayetano/",
               "budgets": [
                 {
                   "type": "initial",
@@ -52,8 +51,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "10kB",
-                  "maximumError": "15kB"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all"
