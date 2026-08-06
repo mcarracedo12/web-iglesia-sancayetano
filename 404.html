@@ -1,75 +1,77 @@
 <!doctype html>
-
-<html lang="en" data-beasties-container>
+<html lang="es" data-beasties-container>
 
 <head>
   <meta charset="utf-8">
-  <title>Parroquia San Cayetano - Rosario | Horarios, Misas y Cáritas</title>
+  <title>Parroquia San Cayetano - Rosario | Horarios, Misas y Comunidad</title>
   <base href="/web-iglesia-sancayetano/">
 
   <!-- SEO Técnico y Accesibilidad -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow">
-  <meta name="description" content="Página oficial de la Parroquia San Cayetano de Rosario. Información sobre horarios de misas, actividades comunitarias, sacramentos y donaciones a Cáritas.">
-  <meta name="keywords" content="Parroquia San Cayetano Rosario, Iglesia San Cayetano, horarios de misa San Cayetano, Cáritas Rosario donaciones, religión, Rosario">
-  <link rel="canonical" href="https://www.sancayetanorosario.org.ar/">
-  <!-- Reemplazar por la URL final -->
+  <meta name="description" content="Sitio oficial de la Parroquia San Cayetano en Rosario. Horarios de misa, atención de secretaría, actividades comunitarias y donaciones. Buenos Aires 2158.">
+  <meta name="keywords" content="Parroquia San Cayetano, San Cayetano Rosario, Horarios de Misa Rosario, Iglesia Rosario, Buenos Aires 2158">
+  <link rel="canonical" href="https://sancayetanorosario.com.ar/">
 
   <!-- Open Graph / Vista Previa en Redes Sociales y WhatsApp -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.sancayetanorosario.org.ar/"> <!-- Reemplazar por la URL final -->
+  <meta property="og:url" content="https://sancayetanorosario.com.ar/"> 
   <meta property="og:title" content="Parroquia San Cayetano - Rosario">
-  <meta property="og:description" content="Horarios de misas, actividades de la comunidad y donaciones a Cáritas.">
-  <meta property="og:image" content="https://www.sancayetanorosario.org.ar/assets/images/frente-iglesia.jpg">
-  <!-- Reemplazar por una foto real en producción -->
+  <meta property="og:description" content="Horarios de misas, actividades de la comunidad y donaciones a Cáritas. Buenos Aires 2158, Rosario.">
+  <meta property="og:image" content="https://sancayetanorosario.com.ar/assets/images/frente-iglesia.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Parroquia San Cayetano - Rosario">
+  <meta name="twitter:description" content="Sitio oficial de la Parroquia San Cayetano en Rosario. Horarios de misa, secretaría y donaciones.">
+  <meta name="twitter:image" content="https://sancayetanorosario.com.ar/assets/images/frente-iglesia.jpg">
 
   <!-- Favicon y Estilos Externos -->
   <link rel="icon" type="image/jpeg" href="assets/icons/icon_cruz.jpg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<style>body{margin:0;padding:0;min-height:100vh;position:relative;background-color:#f4ede4}body:before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background-image:url("./media/bg-iglesia-W76KCF2M.jpg");background-repeat:no-repeat;background-position:center;background-size:cover;opacity:.7;filter:grayscale(.4);z-index:-1}</style><link rel="stylesheet" href="styles-V6XMLQRP.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-V6XMLQRP.css"></noscript></head>
 
+  <!-- GEO / AIO (Schema.org / Datos Estructurados para IAs y Google Maps) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Church",
+    "name": "Parroquia San Cayetano",
+    "url": "https://sancayetanorosario.com.ar",
+    "email": "sancayetano.ros@gmail.com",
+    "telephone": "+543413535467",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Buenos Aires 2158",
+      "addressLocality": "Rosario",
+      "addressRegion": "Santa Fe",
+      "postalCode": "S2000",
+      "addressCountry": "AR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -32.9567,
+      "longitude": -60.6308
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "16:00",
+        "closes": "19:00"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/ParroquiaSanCayetanoRosario"
+    ]
+  }
+  </script>
+<style>body{margin:0;padding:0;min-height:100vh;position:relative;background-color:#f4ede4}body:before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background-image:url("./media/bg-iglesia-W76KCF2M.jpg");background-repeat:no-repeat;background-position:center;background-size:cover;opacity:.7;filter:grayscale(.4);z-index:-1}</style><link rel="stylesheet" href="styles-V6XMLQRP.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-V6XMLQRP.css"></noscript></head>
 
 <body>
   <app-root></app-root>
-
-  <script>
-    // Esta función espera a que TODO el contenido de la página cargue
-    window.addEventListener('load', () => {
-
-      // Usamos un pequeño intervalo para darle tiempo a Angular de renderizar los componentes
-      setTimeout(() => {
-        const container = document.getElementById('carouselContainer');
-        const nextBtn = document.getElementById('nextBtn');
-        const prevBtn = document.getElementById('prevBtn');
-
-        if (container && nextBtn && prevBtn) {
-          nextBtn.addEventListener('click', () => {
-            const scrollAmount = 350;
-            if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 50) {
-              container.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-              container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            }
-          });
-
-          prevBtn.addEventListener('click', () => {
-            const scrollAmount = 350;
-            if (container.scrollLeft <= 5) {
-              container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
-            } else {
-              container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            }
-          });
-
-          console.log("Carrusel de Comunidad listo!");
-        } else {
-          console.warn("No se encontraron los elementos del carrusel todavía.");
-        }
-      }, 500);
-    });
-  </script>
-
-
-<script src="main-IRW4WRXD.js" type="module"></script></body>
+<script src="main-C47NK5EC.js" type="module"></script></body>
 
 </html>
