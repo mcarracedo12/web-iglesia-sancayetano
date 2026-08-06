@@ -7,33 +7,18 @@ import { Becas } from "./becas/becas";
 import { TiemposCompartidos } from "./tiempos-compartidos/tiempos-compartidos";
 import { Whatsapp } from "../../shared/whatsapp/whatsapp";
 
-
+type ModalTipo = 'ropa' | 'alimentos' | 'apoyo' | 'becas' | 'tiempos' | null;
 @Component({
   selector: 'app-caritas',
   imports: [CommonModule, Ropa, Whatsapp, Alimentos, ApoyoEscolar, Becas, TiemposCompartidos, ApoyoEscolar],
   templateUrl: './caritas.html',
 })
 export class Caritas {
-  mostrarRopa: boolean = false;
-  mostrarAlimentos: boolean = false;
-  mostrarApoyo: boolean = false;
-  mostrarBecas: boolean = false;
-  mostrarTiempos: boolean = false;
+  modalActivo: ModalTipo = null;
 
-  abrirRopa() {
-    this.mostrarRopa = true;
-  }
-  abrirAlimentos() {
-    this.mostrarAlimentos = true;
-  }
-  abrirApoyo() {
-    this.mostrarApoyo = true;
-  }
-  abrirBecas() {
-    this.mostrarBecas = true;
-  }
-  abrirTiempos() {
-    this.mostrarTiempos = true;
+  @HostListener('document:keydown.escape')
+  manejarEsc() {
+    this.modalActivo = null; // Cierra cualquier modal activo en una sola línea
   }
 
 }

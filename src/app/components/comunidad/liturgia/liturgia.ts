@@ -1,32 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { SanExpedito } from "./san-expedito/san-expedito";
 import { SanPioPietralcina } from "./san-pio-pietralcina/san-pio-pietralcina";
 import { Patronal } from "./patronal/patronal";
 import { Whatsapp } from "../../shared/whatsapp/whatsapp";
 import { CommonModule } from '@angular/common';
 
+type ModalTipo = 'expedito' | 'pio' | 'patronal' | null;
+
 @Component({
   selector: 'app-liturgia',
+  standalone: true,
   imports: [CommonModule, SanExpedito, SanPioPietralcina, Patronal, Whatsapp],
   templateUrl: './liturgia.html',
 })
 export class Liturgia {
-  mostrarSanExpedito: boolean = false;
-  mostrarSanPioPietralcina: boolean = false;
-  mostrarPatronal: boolean = false;
-  // mostrarMensual7: boolean = false;
-  mostrarMensual19: boolean = false;
-  mostrarMensual23: boolean = false;
-  mostrarMensual25: boolean = false;
+  modalActivo: ModalTipo = null;
 
-  abrirSanExpedito() {
-    this.mostrarSanExpedito = true;
+  @HostListener('document:keydown.escape')
+  manejarEsc() {
+    this.modalActivo = null; 
   }
-  abrirSanPioPietralcina() {
-    this.mostrarSanPioPietralcina = true;
-  }
-  abrirPatronal() {
-    this.mostrarPatronal = true;
-  }
-
 }

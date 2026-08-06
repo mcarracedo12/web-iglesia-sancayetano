@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CatAdol } from './cat-adol/cat-adol';
 import { CatAlpha } from './cat-alpha/cat-alpha';
@@ -7,33 +7,20 @@ import { CatMatrimonios } from './cat-matrimonios/cat-matrimonios';
 import { CatNino } from './cat-nino/cat-nino';
 import { Whatsapp } from "../../shared/whatsapp/whatsapp";
 
+type ModalTipo = 'cat-nino' | 'cat-adol' | 'cat-jov-adul' | 'cat-matrimonios' | 'cat-alpha' | null;
+
 @Component({
   selector: 'app-catequesis',
   imports: [CommonModule, CatAdol, CatAlpha, CatJovAdul, CatMatrimonios, CatNino, Whatsapp],
-  templateUrl: './catequesis.html',
-  //styleUrl: './../../comunidad.scss',
+  templateUrl: './catequesis.html'
 })
+
+
 export class Catequesis {
-  mostrarCatNinos: boolean = false;
-  mostrarCatAdol: boolean = false;
-  mostrarCatJovAdul: boolean = false;
-  mostrarCatMatrimonios: boolean = false;
-  mostrarAlpha: boolean = false; 
+  modalActivo: ModalTipo = null;
 
-  abrirCatNinos(){
-    this.mostrarCatNinos = true;
+  @HostListener('document:keydown.escape')
+  manejarEsc() {
+    this.modalActivo = null; 
   }
-  abrirCatAdol(){
-    this.mostrarCatAdol = true;
-  }
-  abrirCatJovAdul(){
-    this.mostrarCatJovAdul = true;
-  }
-  abrirCatMatrimonios(){
-    this.mostrarCatMatrimonios = true;
-  }
-  abrirAlpha(){
-    this.mostrarAlpha = true;
-  }
-
 }

@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-cat-jov-adul',
@@ -10,9 +10,5 @@ export class CatJovAdul {
   @Output()close = new EventEmitter<void>();
   cerrar(){
     this.close.emit();
-  }
-  @HostListener('document:keydown.escape')
-  manejarEsc() {
-    this.cerrar();
   }
 }

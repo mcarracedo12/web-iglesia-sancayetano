@@ -14,21 +14,16 @@ export class Cultura {
   mostrarHistoria: boolean = false;
   mostrarBiografia: boolean = false;
 
-  abrirHistoria() {
-    this.mostrarHistoria = true;
-  }
+  abrirHistoria() { this.mostrarHistoria = true; }
+  cerrarHistoria() { this.mostrarHistoria = false; }
 
-  abrirBio() {
-    this.mostrarBiografia = true;
-  }
+  abrirBio() { this.mostrarBiografia = true; }
+  cerrarBio() { this.mostrarBiografia = false; }
 
-  isModalOpen = false;
-
-  @HostListener('window:keydown.escape')
-  handleEscapeKey() {
-    if (this.isModalOpen) {
-      this.isModalOpen = false;
-    }
+  @HostListener('document:keydown.escape')
+  manejarEsc() {
+    if (this.mostrarHistoria) this.cerrarHistoria();
+    if (this.mostrarBiografia) this.cerrarBio();
   }
 
 }

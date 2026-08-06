@@ -1,21 +1,21 @@
 <div class="card">
-    <img src="assets/images/comunidad/comunidad-catequesis.jpg" alt="Catequesis">
+    <img src="assets/images/comunidad/comunidad-catequesis.webp" alt="Catequesis">
     <div class="card-info">
         <h3>Catequesis</h3>
         <ul class="card-menu">
-            <li (click)="mostrarCatNinos = true">
+            <li (click)="modalActivo = 'cat-nino'">
                 <i class="fa-solid fa-chevron-right"></i> Catequesis de niños
             </li>
-            <li (click)="mostrarCatAdol = true">
+            <li (click)="modalActivo = 'cat-adol'">
                 <i class="fa-solid fa-chevron-right"></i> Catequesis de adolescentes
             </li>
-            <li (click)="mostrarCatJovAdul = true">
+            <li (click)="modalActivo = 'cat-jov-adul'">
                 <i class="fa-solid fa-chevron-right"></i> Catequesis para Jovenes y Catecumenado de Adultos
             </li>
-            <li (click)="mostrarCatMatrimonios = true">
+            <li (click)="modalActivo = 'cat-matrimonios'">
                 <i class="fa-solid fa-chevron-right"></i> Catequesis para Matrimonios
             </li>
-            <li (click)="mostrarAlpha = true">
+            <li (click)="modalActivo = 'cat-alpha'">
                 <i class="fa-solid fa-chevron-right"></i> Alpha
             </li>
         </ul>
@@ -24,8 +24,8 @@
     </div>
 </div>
 
-<app-cat-nino *ngIf="mostrarCatNinos" (close)="mostrarCatNinos = false"></app-cat-nino>
-<app-cat-adol *ngIf="mostrarCatAdol" (close)="mostrarCatAdol = false"></app-cat-adol>
-<app-cat-jov-adul *ngIf="mostrarCatJovAdul" (close)="mostrarCatJovAdul = false"></app-cat-jov-adul>
-<app-cat-matrimonios *ngIf="mostrarCatMatrimonios" (close)="mostrarCatMatrimonios = false"></app-cat-matrimonios>
-<app-cat-alpha *ngIf="mostrarAlpha" (close)="mostrarAlpha = false"> </app-cat-alpha>
+<app-cat-nino *ngIf="modalActivo === 'cat-nino'" (close)="modalActivo = null"></app-cat-nino>
+<app-cat-adol *ngIf="modalActivo === 'cat-adol'" (close)="modalActivo = null"></app-cat-adol>
+<app-cat-jov-adul *ngIf="modalActivo === 'cat-jov-adul'" (close)="modalActivo = null"></app-cat-jov-adul>
+<app-cat-matrimonios *ngIf="modalActivo === 'cat-matrimonios'" (close)="modalActivo = null"></app-cat-matrimonios>
+<app-cat-alpha *ngIf="modalActivo === 'cat-alpha'" (close)="modalActivo = null"> </app-cat-alpha>

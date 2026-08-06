@@ -1,16 +1,15 @@
 <div class="card">
-    <img src="assets/images/comunidad/comunidad-liturgia.jpg" alt="Liturgia">
+    <img src="assets/images/comunidad/comunidad-liturgia.webp" alt="Liturgia">
     <div class="card-info">
         <h3>Liturgia</h3>
-        <!-- <p>Participación en los sacramentos y celebraciones religiosas.</p> -->
         <ul class="card-menu">
-            <li (click)="mostrarSanExpedito = true">
+            <li (click)="modalActivo = 'expedito'">
                 <i class="fa-solid fa-chevron-right"></i> 19 de Abril: Fiesta de San Expedito
             </li>
-            <li (click)="mostrarSanPioPietralcina = true">
+            <li (click)="modalActivo = 'pio'">
                 <i class="fa-solid fa-chevron-right"></i> 23 de Setiembre: Fiesta de San Pío de Pietralcina
             </li>
-            <li (click)="mostrarPatronal = true">
+            <li (click)="modalActivo = 'patronal'">
                 <i class="fa-solid fa-chevron-right"></i> 7 de Agosto: Fiesta Patronal de San Cayetano
             </li>
             <li>
@@ -21,6 +20,7 @@
         <app-whatsapp></app-whatsapp>
     </div>
 </div>
-<app-san-expedito *ngIf="mostrarSanExpedito" (close)="mostrarSanExpedito=false"></app-san-expedito>
-<app-san-pio-pietralcina *ngIf="mostrarSanPioPietralcina" (close)="mostrarSanPioPietralcina=false"></app-san-pio-pietralcina>
-<app-patronal *ngIf="mostrarPatronal" (close)="mostrarPatronal=false"></app-patronal>
+
+<app-san-expedito *ngIf="modalActivo === 'expedito'" (close)="modalActivo = null"></app-san-expedito>
+<app-san-pio-pietralcina *ngIf="modalActivo === 'pio'" (close)="modalActivo = null"></app-san-pio-pietralcina>
+<app-patronal *ngIf="modalActivo === 'patronal'" (close)="modalActivo = null"></app-patronal>

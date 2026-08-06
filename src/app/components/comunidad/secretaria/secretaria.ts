@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReqBautismos } from './req-bautismos/req-bautismos'
 import { ReqCatequesis } from './req-catequesis/req-catequesis';
@@ -7,7 +7,7 @@ import { InfoMisas } from './info-misas/info-misas';
 import { Santeria } from './santeria/santeria';
 import { Whatsapp } from "../../shared/whatsapp/whatsapp";
 
-
+type ModalTipo = 'bautismos' | 'catequesis' | 'casamientos' | 'misa' | 'santeria' | null;
 @Component({
   selector: 'app-secretaria',
   imports: [CommonModule, ReqBautismos, ReqCatequesis, ReqCasamientos, InfoMisas, Santeria, Whatsapp],
@@ -15,25 +15,10 @@ import { Whatsapp } from "../../shared/whatsapp/whatsapp";
   //styleUrl: './../comunidad.scss'
 })
 export class Secretaria {
-  mostrarReqBautismos: boolean = false;
-  mostrarReqCatequesis: boolean = false;
-  mostrarReqCasamientos: boolean =false;
-  mostrarInfoMisas: boolean = false;
-  mostrarSanteria: boolean = false;
-  abrirReqBautismos() {
-    this.mostrarReqBautismos = true;
-  }
-  abrirReqCatequesis() {
-    this.mostrarReqCatequesis = true;
-  }
-  abrirReqCasamientos(){
-    this.mostrarReqCasamientos = true;
-  }
-  abrirInfoMisas(){
-    this.mostrarInfoMisas = true;
-  }
-  abrirSanteria(){
-    this.mostrarSanteria = true;
-  }
+  modalActivo: ModalTipo = null;
 
+  @HostListener('document:keydown.escape')
+  manejarEsc() {
+    this.modalActivo = null; 
+  }
 }

@@ -4,33 +4,29 @@
         <h3>Cáritas</h3>
         <!-- <p>Manos en obra apoyando a la comunidad.</p> -->
         <ul class="card-menu">
-            <li (click)="mostrarRopa = true">
+            <li (click)="modalActivo = 'ropa'">
                 <i class="fa-solid fa-chevron-right"></i> Ropa
             </li>
-            <li (click)="mostrarAlimentos = true">
+            <li (click)="modalActivo = 'alimentos'">
                 <i class="fa-solid fa-chevron-right"></i> Alimentos
             </li>
-            <li (click)="mostrarApoyo = true">
+            <li (click)="modalActivo = 'apoyo'">
                 <i class="fa-solid fa-chevron-right"></i> Clases de apoyo
             </li>
-            <li (click)="mostrarBecas = true">
+            <li (click)="modalActivo = 'becas'">
                 <i class="fa-solid fa-chevron-right"></i>Becas
             </li>
-            <li (click)="mostrarTiempos = true">
+            <li (click)="modalActivo = 'tiempos'">
                 <i class="fa-solid fa-chevron-right"></i> Tiempos compartidos
             </li>
         </ul>
-       
-        <!-- <a href="https://link.mercadopago.com.ar/TU_LINK_AQUI" target="_blank" class="float-button">
-          <span class="icon">❤</span>
-          <span class="text">Donar</span>
-        </a> -->
-        
+
+
         <app-whatsapp></app-whatsapp>
     </div>
 </div>
-<app-ropa *ngIf="mostrarRopa" (close)="mostrarRopa = false"></app-ropa>
-<app-alimentos *ngIf="mostrarAlimentos" (close)="mostrarAlimentos = false"></app-alimentos>
-<app-apoyo-escolar *ngIf="mostrarApoyo" (close)="mostrarApoyo = false"></app-apoyo-escolar>
-<app-becas *ngIf="mostrarBecas" (close)="mostrarBecas = false"></app-becas>
-<app-tiempos-compartidos *ngIf="mostrarTiempos" (close)="mostrarTiempos = false"></app-tiempos-compartidos> 
+<app-ropa *ngIf="modalActivo === 'ropa'" (close)="modalActivo = null"></app-ropa>
+<app-alimentos *ngIf="modalActivo === 'alimentos'" (close)="modalActivo = null"></app-alimentos>
+<app-apoyo-escolar *ngIf="modalActivo === 'apoyo'" (close)="modalActivo = null"></app-apoyo-escolar>
+<app-becas *ngIf="modalActivo === 'becas'" (close)="modalActivo = null"></app-becas>
+<app-tiempos-compartidos *ngIf="modalActivo === 'tiempos'" (close)="modalActivo = null"></app-tiempos-compartidos>

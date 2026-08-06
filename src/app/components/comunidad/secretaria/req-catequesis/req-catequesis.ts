@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, HostListener } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-req-catequesis',
@@ -11,8 +11,4 @@ export class ReqCatequesis {
 
   cerrar(){this.close.emit();
    } 
-   @HostListener('document:keydown.escape')
-  manejarEsc() {
-    this.cerrar();
-  }
 }
