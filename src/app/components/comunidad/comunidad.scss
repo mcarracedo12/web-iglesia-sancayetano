@@ -1,22 +1,20 @@
-
 /* ==========================================================================
-   1. VARIABLES DE COLOR (PALETA EN GAMA DE MARRONES)
+   1. VARIABLES DE COLOR
    ========================================================================== */
-$primario: #fdfcf8;         // Crema / Blanco cálido
-$fondo: #743608d4;          // Marrón base (foto iglesia)
-$fondo-modal: #f7f2e8;     // Beige suave 
-$detalles-modal: #4a2205;  // Marrón oscuro
-$hover-lista: rgba(212, 163, 115, 0.3); // Ocre traslúcido
+$primario: #fdfcf8;
+$fondo: #743608d4;
+$fondo-modal: #f7f2e8;
+$detalles-modal: #4a2205;
+$hover-lista: rgba(212, 163, 115, 0.3);
 
 /* ==========================================================================
-   2. CONTENEDOR PRINCIPAL Y ESTRUCTURA DEL CARRUSEL
+   2. CONTENEDOR Y CARRUSEL
    ========================================================================== */
 .comunidad-grid {
   padding: 50px 20px;
   text-align: center;
 
   h2 {
-    text-align: center;
     color: $primario;
     margin-bottom: 45px;
     font-size: 2rem;
@@ -33,36 +31,34 @@ $hover-lista: rgba(212, 163, 115, 0.3); // Ocre traslúcido
   -webkit-overflow-scrolling: touch;
   user-select: none;
   cursor: grab;
-  
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
   &::-webkit-scrollbar { display: none; } 
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
 
   &.active {
     cursor: grabbing;
     scroll-snap-type: none; 
   }
-}
 
-.cards-container > * {
-  scroll-snap-align: start;
-  flex-shrink: 0;
-}
+  // Agrupamos todos los ítems del carrusel en un solo selector directo
+  > * {
+    scroll-snap-align: start;
+    flex: 0 0 600px;
+    display: flex;
+    flex-direction: column;
 
-// Mantenemos el mismo ancho fijo para DIVs y componentes nuevos en el carrusel
-.card, app-secretaria, app-catequesis, app-caritas, app-actividad-social, app-liturgia {
-  flex: 0 0 600px;
-  scroll-snap-align: center;
-  display: flex;
-  flex-direction: column;
+    @media (max-width: 600px) {
+      flex: 0 0 85% !important;
+    }
+  }
 }
 
 /* ==========================================================================
-   3. ESTILOS PLANOS INYECTADOS (Para Tarjetas y Modales)
+   3. ESTILOS DE TARJETAS Y MODALES (INYECTADOS)
    ========================================================================== */
 :host ::ng-deep {
 
-  /* --- DISEÑO DE LAS TARJETA BASE --- */
   .card {
     background: $fondo;
     border-radius: 15px;
@@ -73,17 +69,15 @@ $hover-lista: rgba(212, 163, 115, 0.3); // Ocre traslúcido
     position: relative;
     height: 100%;
 
-    &:hover { 
-      transform: scale(1.02); 
-    }
-  }
+    &:hover { transform: scale(1.02); }
 
-  .card img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    object-position: top;
-    height: 500px;
+    img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: top;
+      height: 500px;
+    }
   }
 
   .card-info {
@@ -109,7 +103,6 @@ $hover-lista: rgba(212, 163, 115, 0.3); // Ocre traslúcido
     }
   }
 
-  /* --- LISTAS INTERNAS (Secretaría / Catequesis) --- */
   .card-menu {
     list-style: none;
     padding: 0;
@@ -117,42 +110,37 @@ $hover-lista: rgba(212, 163, 115, 0.3); // Ocre traslúcido
     display: flex;
     flex-direction: column;
     gap: 8px;
-  }
 
-  .card-menu li {
-    font-size: 0.9rem;
-    color: $primario;
-    cursor: pointer;
-    padding: 6px 8px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.2s ease;
-  }
-
-  .card-menu li i {
-    font-size: 0.75rem;
-    color: $primario;
-    transition: transform 0.2s;
-  }
-
-  .card-menu li:hover {
-    background-color: $hover-lista;
-    color: $primario;
-    
-    i {
+    li {
+      font-size: 0.9rem;
       color: $primario;
-      transform: translateX(3px);
+      cursor: pointer;
+      padding: 6px 8px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+
+      i {
+        font-size: 0.75rem;
+        color: $primario;
+        transition: transform 0.2s;
+      }
+
+      &:hover {
+        background-color: $hover-lista;
+        color: $primario;
+        i { transform: translateX(3px); }
+      }
     }
   }
 
-  /* --- BOTÓN DE WHATSAPP --- */
   .btn-whatsapp {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: #25d366; // Se mantiene el verde nativo por UX
+    background-color: #25d366;
     color: white;
     text-decoration: none;
     padding: 8px 15px;
@@ -163,13 +151,10 @@ $hover-lista: rgba(212, 163, 115, 0.3); // Ocre traslúcido
     margin-top: auto; 
   }
 
-  /* --- ESTRUCTURA DE LOS MODALES --- */
+  /* MODALES */
   .modal-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
     background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
@@ -201,19 +186,16 @@ $hover-lista: rgba(212, 163, 115, 0.3); // Ocre traslúcido
     cursor: pointer;
     transition: color 0.2s;
 
-    &:hover {
-      color: #e74c3c;
-    }
+    &:hover { color: #e74c3c; }
   }
 
   .content {
     text-align: left;
 
     h2 {
-      text-align: center;
       color: $detalles-modal;
       margin: 0 0 45px 0;
-      font-size: 2 rem;
+      font-size: 2rem;
     }
 
     .subtitle {
@@ -226,28 +208,22 @@ $hover-lista: rgba(212, 163, 115, 0.3); // Ocre traslúcido
     }
   }
 
-  /* --- GRILLA INTERNA DEL MODAL --- */
   .info-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 25px;
     align-items: start;
-    background: transparent;
 
     @media (max-width: 650px) {
       grid-template-columns: 1fr;
     }
   }
 
-  .modal-media {
+  .modal-media img {
     width: 100%;
-
-    img {
-      width: 100%;
-      border-radius: 8px;
-      object-fit: cover;
-      aspect-ratio: 4 / 3;
-    }
+    border-radius: 8px;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
   }
 
   .modal-body {
@@ -255,10 +231,7 @@ $hover-lista: rgba(212, 163, 115, 0.3); // Ocre traslúcido
       color: $detalles-modal;
       margin: 0 0 10px 0;
       font-size: 1.1rem;
-      
-      &:not(:first-child) {
-        margin-top: 20px;
-      }
+      &:not(:first-child) { margin-top: 20px; }
     }
 
     ul {
@@ -267,19 +240,18 @@ $hover-lista: rgba(212, 163, 115, 0.3); // Ocre traslúcido
 
       li {
         margin-bottom: 8px;
-        color: #3e2723; // Marrón oscuro sutil para legibilidad del texto corrido
+        color: #3e2723;
         line-height: 1.5;
         font-size: 0.95rem;
       }
     }
   }
 
-  /* --- BOTÓN FLOTANTE (Para Cáritas) --- */
   .float-button {
     position: absolute;
     bottom: 20px; 
     right: 20px;
-    background-color: #d9381e; // Un rojo óxido más cálido para que no sature con el marrón
+    background-color: #d9381e;
     color: white;
     text-decoration: none;
     padding: 8px 15px;
@@ -289,7 +261,7 @@ $hover-lista: rgba(212, 163, 115, 0.3); // Ocre traslúcido
     gap: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     z-index: 5;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s, background-color 0.3s;
 
     &:hover {
       transform: scale(1.05);
@@ -298,11 +270,20 @@ $hover-lista: rgba(212, 163, 115, 0.3); // Ocre traslúcido
 
     .icon { font-size: 1.1rem; }
     .text { font-size: 0.85rem; font-weight: bold; }
+
+    @media (max-width: 600px) {
+      padding: 0;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      justify-content: center;
+      .text { display: none; }
+    }
   }
 }
 
 /* ==========================================================================
-   4. FLECHAS DEL CARRUSEL
+   4. FLECHAS
    ========================================================================== */
 .carousel-wrapper {
   position: relative;
@@ -337,13 +318,8 @@ $hover-lista: rgba(212, 163, 115, 0.3); // Ocre traslúcido
 
     i { color: $detalles-modal; font-size: 1.2rem; }
   }
-}
 
-/* ==========================================================================
-   5. RESPONSIVE (MEDIA QUERIES)
-   ========================================================================== */
-@media (max-width: 850px) {
-  .carousel-wrapper {
+  @media (max-width: 850px) {
     padding: 0 10px;
     .arrow-btn {
       width: 35px;
@@ -352,39 +328,21 @@ $hover-lista: rgba(212, 163, 115, 0.3); // Ocre traslúcido
       &.right { right: 5px; }
     }
   }
-}
 
-@media (max-width: 600px) {
-  .card, app-secretaria, app-catequesis, app-caritas, app-actividad-social, app-liturgia {
-    flex: 0 0 85% !important; 
-  }
-
-  :host ::ng-deep .float-button {
-    bottom: 20px;
+  @media (max-width: 480px) {
     padding: 0;
-    border-radius: 50%;
-    width: 38px;
-    height: 38px;
-    justify-content: center;
-    .text { display: none; }
   }
-}
-
-@media (max-width: 480px) {
-  .carousel-wrapper { padding: 0; }
-  .cards-container { padding: 10px; }
 }
 
 /* ==========================================================================
-   6. MODIFICACIÓN EXCLUSIVA PARA EL MODAL DE SANTERÍA
+   5. SANTERÍA (MODAL ESPECÍFICO)
    ========================================================================== */
 :host ::ng-deep {
   .info-grid:has(.santeria-horario) {
     @media (min-width: 768px) {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        min-height: 200px;
+      display: flex;
+      justify-content: center;
+      min-height: 200px;
     }
 
     .modal-body {
@@ -397,7 +355,7 @@ $hover-lista: rgba(212, 163, 115, 0.3); // Ocre traslúcido
       }
 
       p {
-        color: #5d4037; // Ajustado a la gama del marrón intermedio
+        color: #5d4037;
         font-size: 1.1rem;
         line-height: 1.6;
         margin: 0 0 10px 0;
